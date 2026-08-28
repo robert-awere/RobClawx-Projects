@@ -24,6 +24,7 @@ and the state of the art in image, video, and audio generation.
 - Tailwind CSS + shadcn/ui
 - Newsreader (serif display) + system sans
 - All data lives in a single flat file: `src/data/models.ts`
+- SEO-ready articles live in `src/data/articles.json` and are generated as static pages during the build
 
 ## Run locally
 
@@ -43,6 +44,9 @@ The directory is only as good as its freshness. Weekly routine (~30 min):
    open-weight release. Keep the list curated, not exhaustive.
 3. Copy an existing entry in `src/data/models.ts`, edit the fields, `npm run build`.
 4. Re-verify pricing quarterly — it stales fastest.
+
+Article quality and publication rules are in [`EDITORIAL.md`](./EDITORIAL.md). `npm run build`
+rejects articles that miss the sourcing, substance, model relevance, or weekly frequency gates.
 
 ## License
 

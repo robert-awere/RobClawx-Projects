@@ -5,9 +5,10 @@ import {
 } from 'lucide-react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import {
-  MODELS, PROVIDERS, CATEGORY_LABELS, formatContext, formatPrice, formatReleased,
+  MODELS, PROVIDERS, CATEGORY_LABELS, LAST_UPDATED, formatContext, formatPrice, formatReleased,
   type AIModel, type Category,
 } from '@/data/models';
+import { ARTICLES } from '@/data/articles';
 
 const CATEGORY_ICONS: Record<Category, React.ReactNode> = {
   language: <MessageSquare className="w-3 h-3" />,
@@ -56,7 +57,7 @@ export default function App() {
       <header className="border-b border-neutral-200 bg-white">
         <div className="mx-auto max-w-6xl px-6 pt-14 pb-10">
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-400">
-            frontierai.directory — Updated July 2026
+            frontierai.directory — Updated {formatReleased(LAST_UPDATED.slice(0, 7))}
           </p>
           <h1 className="mt-3 font-serif text-[42px] leading-[1.05] sm:text-[54px] font-semibold tracking-tight text-neutral-900">
             Frontier <span className="italic">AI</span>
@@ -158,9 +159,28 @@ export default function App() {
         )}
       </main>
 
+      {ARTICLES.length > 0 && (
+        <section className="mx-auto max-w-6xl px-6 pb-12" aria-labelledby="analysis-heading">
+          <div className="border-t border-neutral-200 pt-8">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-400">Evidence-led editorial</p>
+            <h2 id="analysis-heading" className="mt-2 font-serif text-3xl font-semibold text-neutral-900">Model analysis</h2>
+            <div className="mt-5 grid gap-px overflow-hidden rounded-lg border border-neutral-200 bg-neutral-200 md:grid-cols-2">
+              {ARTICLES.slice().sort((a, b) => b.published.localeCompare(a.published)).slice(0, 4).map((article) => (
+                <a key={article.slug} href={`/articles/${article.slug}/`} className="bg-white p-5 transition hover:bg-neutral-50">
+                  <p className="text-[10px] uppercase tracking-wider text-neutral-400">{formatReleased(article.published.slice(0, 7))}</p>
+                  <h3 className="mt-2 font-serif text-xl font-semibold text-neutral-900">{article.title}</h3>
+                  <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">{article.description}</p>
+                </a>
+              ))}
+            </div>
+            <a href="/articles/" className="mt-4 inline-block text-[13px] font-medium underline underline-offset-4">All analysis →</a>
+          </div>
+        </section>
+      )}
+
       <footer className="border-t border-neutral-200 bg-white">
         <div className="mx-auto max-w-6xl px-6 py-6 text-[11.5px] leading-relaxed text-neutral-400">
-          Figures are compiled from vendor documentation and public evaluations as of mid-2026
+          Figures are compiled from vendor documentation and public evaluations, last reviewed {formatReleased(LAST_UPDATED.slice(0, 7))}
           (SWE-bench, LMArena, Artificial Analysis, and others). Prices are in US dollars per million tokens
           and subject to change. Benchmark scores are approximate and intended for orientation only.
         </div>

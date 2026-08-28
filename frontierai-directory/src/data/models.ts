@@ -33,6 +33,8 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
+export const LAST_UPDATED = '2026-07-24';
+
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
   {
