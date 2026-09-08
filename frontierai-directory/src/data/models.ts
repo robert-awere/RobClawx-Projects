@@ -33,7 +33,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
-export const LAST_UPDATED = '2026-09-04';
+export const LAST_UPDATED = '2026-09-08';
 
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
@@ -400,16 +400,17 @@ export const MODELS: AIModel[] = [
     provider: 'Alibaba',
     providerColor: '#e05500',
     category: ['language', 'reasoning', 'coding', 'multimodal'],
-    openWeight: false,
+    openWeight: true,
     released: '2026-08',
     context: 1000000,
     pricing: { input: 2, output: 6 },
     params: '2.4T MoE / 95B active',
+    license: 'Qwen3.8-Max License',
     tagline: 'Alibaba\'s multimodal long-horizon flagship',
     description:
-      'Alibaba\'s 2.4T-parameter flagship handles text, image, and video across a 1M context window with up to 131K output. International API pricing is $2/$6; regional rates vary. The model ranks near the top on agentic knowledge-work evaluations, but the promised open-weight release was not independently verified during this review.',
-    strengths: ['1M multimodal context', '131K max output', 'Strong agentic knowledge work', 'Adjustable reasoning effort'],
-    weaknesses: ['Promised weights not yet verified', 'Regional pricing varies', 'Vendor long-horizon claims need independent replication'],
+      'Alibaba\'s 2.4T-parameter API flagship handles text, image, and video across a 1M context window with up to 131K output at $2/$6 internationally. The downloadable 2.4T/95B-active checkpoint is now available, but it is text-only, requires thinking mode, and uses a custom license with attribution and large-provider restrictions.',
+    strengths: ['1M multimodal API context', 'Downloadable 2.4T weights', 'Strong agentic knowledge work', 'Adjustable API reasoning effort'],
+    weaknesses: ['Open checkpoint is text-only and always-thinking', 'Custom license restricts some large providers', 'Regional pricing varies', 'Vendor long-horizon claims need independent replication'],
     bestFor: ['Long-horizon agents', 'Multimodal document work', 'Multilingual products', 'Chinese-language business'],
     benchmark: { label: 'GDPval-AA v2', score: '1739' },
     website: 'https://qwen.ai/blog/qwen3.8-max',
@@ -433,6 +434,31 @@ export const MODELS: AIModel[] = [
     weaknesses: ['A generation behind 3.7-Max', 'Agentic scores mid-pack'],
     bestFor: ['Self-hosting', 'Fine-tuning', 'CJK products on owned infra'],
     website: 'https://qwen.ai',
+  },
+
+  // ── Institute of Foundation Models ───────────────────────
+  {
+    id: 'k2-horizon-375b-a23b',
+    name: 'K2 Horizon 375B-A23B',
+    provider: 'Institute of Foundation Models',
+    providerColor: '#7c3aed',
+    category: ['language', 'reasoning', 'coding'],
+    openWeight: true,
+    released: '2026-09',
+    context: 524288,
+    contextLabel: '512K',
+    pricing: { input: null, output: null },
+    params: '375B MoE / 23B active',
+    license: 'Apache 2.0',
+    tagline: 'A transparent open-model family from edge to enterprise',
+    description:
+      'IFM\'s flagship sparse MoE activates 23B of 375B parameters per token and ships with Apache-2.0 weights, native 512K context, and reasoning-effort controls. Artificial Analysis scores it 47: capable, but below the open frontier. IFM promises training data, code, and intermediate checkpoints; the flagship model card says those transparency artifacts are still forthcoming.',
+    strengths: ['Apache-2.0 weights', '512K native context', '23B active parameters', 'Family spans 0.9B to 375B'],
+    weaknesses: ['AA Intelligence Index trails open leaders', 'Flagship needs multi-GPU infrastructure', 'Training data and intermediate checkpoints still forthcoming', 'Vendor benchmark comparisons need replication'],
+    bestFor: ['Open-model research', 'Private enterprise inference', 'Long-context experimentation', 'Studying training-stage behavior'],
+    benchmark: { label: 'AA Intelligence Index', score: '47' },
+    website: 'https://huggingface.co/IFM/K2-Horizon-375B-A23B',
+    hot: true,
   },
 
   // ── Meta ────────────────────────────────────────────────
