@@ -33,7 +33,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
-export const LAST_UPDATED = '2026-09-08';
+export const LAST_UPDATED = '2026-09-11';
 
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
@@ -325,6 +325,28 @@ export const MODELS: AIModel[] = [
 
   // ── DeepSeek ────────────────────────────────────────────
   {
+    id: 'deepseek-v4-1-flash',
+    name: 'DeepSeek V4.1 Flash',
+    provider: 'DeepSeek',
+    providerColor: '#3d55e0',
+    category: ['language', 'reasoning', 'coding', 'multimodal'],
+    openWeight: true,
+    released: '2026-09',
+    context: 1048576,
+    contextLabel: '1M',
+    pricing: { input: 0.3, output: 1.2 },
+    params: '552B MoE / 8B prefill, 16B decode',
+    license: 'MIT',
+    tagline: 'Multimodal frontier agents at Flash economics',
+    description:
+      'DeepSeek\'s new open-weight multimodal model pairs a 552B MoE backbone with 1M context, up to 384K output, and continuously adjustable reasoning effort. Peak API pricing is $0.30/$1.20, with off-peak rates halved. DeepSeek reports strong agentic results and plans to route V4 Pro traffic to this cheaper model from September 14; independent Arena evidence is promising but preliminary.',
+    strengths: ['MIT-licensed weights', '1M context and 384K max output', 'Native image and text input', 'Low $0.30/$1.20 peak price'],
+    weaknesses: ['552B weights require substantial infrastructure', 'No Jinja-format chat template', 'Independent benchmark evidence remains preliminary', 'Variable time-of-day API pricing'],
+    bestFor: ['Cost-sensitive coding agents', 'Multimodal document workflows', 'Long-context self-hosting', 'High-volume tool use'],
+    website: 'https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash',
+    hot: true,
+  },
+  {
     id: 'deepseek-v4-pro',
     name: 'DeepSeek V4 Pro',
     provider: 'DeepSeek',
@@ -338,9 +360,9 @@ export const MODELS: AIModel[] = [
     license: 'MIT',
     tagline: 'Open frontier inference with time-of-day pricing',
     description:
-      'The August GA checkpoint adds selectable reasoning effort, Responses API support, 1M context, and up to 384K output. DeepSeek now uses weekday peak pricing: $1.32/$3.96 per million uncached input/output tokens, with all other hours half-price. The displayed rate is the conservative peak rate; cache hits are substantially cheaper.',
+      'The August GA checkpoint adds selectable reasoning effort, Responses API support, 1M context, and up to 384K output. Peak pricing is $1.32/$3.96, with all other hours half-price. DeepSeek says V4.1 Flash now surpasses it and will serve V4 Pro requests at the lower Flash rate from September 14 while V4.1 Pro is pending.',
     strengths: ['1M context and 384K max output', 'Open weights under MIT', 'Half-price off peak', 'Flexible reasoning effort'],
-    weaknesses: ['Variable time-of-day billing', 'Agentic scores trail the top tier', 'Text-only Pro model', 'Data-governance concerns for some enterprises'],
+    weaknesses: ['Scheduled to be routed to V4.1 Flash', 'Variable time-of-day billing', 'Text-only Pro model', 'Data-governance concerns for some enterprises'],
     bestFor: ['High-volume frontier-ish inference', 'Self-hosting', 'Cost-sensitive coding at scale'],
     benchmark: { label: 'SWE-bench Verified', score: '80.6%' },
     website: 'https://www.deepseek.com',
@@ -384,9 +406,9 @@ export const MODELS: AIModel[] = [
     license: 'MIT',
     tagline: 'The new open-weight price-performance floor',
     description:
-      'A natively multimodal, open-weight MoE that scores 57 on the independent Artificial Analysis Intelligence Index at a list price of $0.15/$0.50. Z.ai is temporarily discounting that rate by 50%. Its sparse-plus-linear attention architecture targets inexpensive long-context serving; real deployment throughput still depends on inference hardware and framework support.',
+      'A natively multimodal, open-weight MoE that scores 57 on the independent Artificial Analysis Intelligence Index at $0.15/$0.50. Its sparse-plus-linear attention architecture targets inexpensive long-context serving; real deployment throughput still depends on inference hardware and framework support.',
     strengths: ['AA Intelligence Index 57', '$0.15/$0.50 list price', 'MIT weights', '1M multimodal context'],
-    weaknesses: ['New serving architecture', 'Large 320B total footprint', 'Launch evidence remains limited', 'Discounted API price is temporary'],
+    weaknesses: ['New serving architecture', 'Large 320B total footprint', 'Launch evidence remains limited'],
     bestFor: ['Budget coding agents', 'High-volume multimodal inference', 'Self-hosted production', 'Long-document workflows'],
     benchmark: { label: 'AA Intelligence Index', score: '57' },
     website: 'https://z.ai/blog/glm-5.3-flash',
