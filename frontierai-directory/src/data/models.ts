@@ -33,7 +33,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
-export const LAST_UPDATED = '2026-09-11';
+export const LAST_UPDATED = '2026-09-15';
 
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
@@ -587,23 +587,23 @@ export const MODELS: AIModel[] = [
 
   // ── Image ───────────────────────────────────────────────
   {
-    id: 'gpt-image-2',
-    name: 'GPT Image 2',
+    id: 'gpt-image-2-5',
+    name: 'GPT Image 2.5',
     provider: 'OpenAI',
     providerColor: '#0d8a6a',
     category: ['image'],
     openWeight: false,
-    released: '2026-04',
+    released: '2026-09',
     context: null,
     pricing: { input: null, output: null },
-    tagline: 'The undisputed image arena leader',
+    tagline: 'Two new leaders for fast and precision image work',
     description:
-      'OpenAI\'s third-generation image model and the first with a reasoning step — it plans layout and self-checks before drawing. Holds the largest #1–#2 Elo gap in Artificial Analysis arena history (1339, ~66 points clear), with best-in-class text rendering and conversational editing.',
-    strengths: ['#1 on every blind-vote image arena', 'Reasoning step for complex layouts', 'Excellent text rendering', 'Bundled in ChatGPT plans'],
-    weaknesses: ['Per-image pricing adds up at volume', 'Closed, API/ChatGPT only'],
-    bestFor: ['Marketing graphics', 'Text-heavy assets', 'Iterative conversational editing'],
-    benchmark: { label: 'AA Image Arena Elo', score: '1339 (#1)' },
-    website: 'https://openai.com',
+      'OpenAI\'s September family splits the API into Flare for fast everyday generation and Sunburst for slower, precision editing. Independent Artificial Analysis testing ranks Flare first for text-to-image at 1188 Elo and Sunburst first for editing at 1167. OpenAI reports up to 50% lower latency than GPT Image 2; token rates are unchanged at $5/M text input, $8/M image input, and $30/M image output.',
+    strengths: ['#1 AA text-to-image and editing variants', 'Strong reference-image fidelity', 'More consistent multi-turn edits', 'Flare cuts latency by up to 50% (vendor-reported)'],
+    weaknesses: ['About $211 per 1,000 max-quality 1024px images in independent testing', 'Closed, API/ChatGPT only', 'Sunburst trades speed for precision'],
+    bestFor: ['Marketing graphics', 'Product imagery', 'Reference-led editing', 'Iterative creative workflows'],
+    benchmark: { label: 'AA Text-to-Image Elo (Flare max)', score: '1188 (#1)' },
+    website: 'https://openai.com/index/introducing-chatgpt-images-2-5/',
     hot: true,
   },
   {
