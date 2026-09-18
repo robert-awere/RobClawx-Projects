@@ -33,7 +33,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
-export const LAST_UPDATED = '2026-09-15';
+export const LAST_UPDATED = '2026-09-18';
 
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
@@ -778,21 +778,23 @@ export const MODELS: AIModel[] = [
   },
   {
     id: 'gemini-live',
-    name: 'Gemini 2.5 Flash Live',
+    name: 'Gemini 3.8 Live',
     provider: 'Google DeepMind',
     providerColor: '#2f6bd8',
     category: ['audio', 'multimodal'],
     openWeight: false,
-    released: '2025-09',
-    context: 131000,
-    pricing: { input: 0.5, output: 2 },
-    tagline: 'The best API for real-time voice',
+    released: '2026-09',
+    context: 131072,
+    pricing: { input: null, output: null },
+    tagline: 'The new quality leader for real-time voice agents',
     description:
-      'Native streaming audio in and out, with latency low enough for natural interruptions — the first choice for building real-time voice assistants and customer-service agents.',
-    strengths: ['Low-latency streaming', 'Supports barge-in', 'Unified audio understanding and generation'],
-    weaknesses: ['Costs climb on long sessions'],
-    bestFor: ['Real-time voice assistants', 'Support bots', 'Simultaneous interpretation'],
-    website: 'https://deepmind.google',
+      'Google\'s native speech-to-speech family combines low-latency dialogue with visual grounding and asynchronous tool calls. The standard model favors fluid interaction; Extended Thinking reasons in the background during complex tasks and leads the independent Artificial Analysis Speech to Speech Index at 82.6. Audio costs $0.005 per input minute and $0.018 per output minute.',
+    strengths: ['#1 AA Speech to Speech Index (Extended Thinking)', 'Background reasoning without stopping dialogue', 'Asynchronous tool calls', '97-language support'],
+    weaknesses: ['No context caching or structured output', 'Extended Thinking requires asynchronous client-state handling', 'Audio costs grow with session length'],
+    bestFor: ['Complex voice agents', 'Customer-service automation', 'Visual voice assistants', 'Multilingual live dialogue'],
+    benchmark: { label: 'AA Speech to Speech Index', score: '82.6 (#1)' },
+    website: 'https://ai.google.dev/gemini-api/docs/models/gemini-3.8-live',
+    hot: true,
   },
 ];
 
