@@ -3,10 +3,10 @@
 **[frontierai.directory](https://frontierai.directory)**
 
 A curated, searchable directory of the AI models that matter right now — frontier closed systems
-(Claude Fable 5.1, GPT-6 Astra, Gemini 3.8 Flash), the open-weight field (Kimi K3, DeepSeek V4, GLM-5.3, K2 Horizon),
+(Claude Fable 5.1, GPT-6 Astra, Grok 4.7), the open-weight field (MiMo-V2.6 Pro, Kimi K3, DeepSeek V4, GLM-5.3),
 and the state of the art in image, video, and audio generation.
 
-**37 models · 20 labs · verified September 2026**
+**37 models · 20 labs · verified September 22, 2026**
 
 ## Features
 

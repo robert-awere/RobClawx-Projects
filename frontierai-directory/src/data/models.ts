@@ -33,7 +33,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
-export const LAST_UPDATED = '2026-09-18';
+export const LAST_UPDATED = '2026-09-22';
 
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
@@ -257,24 +257,23 @@ export const MODELS: AIModel[] = [
 
   // ── xAI / SpaceXAI ──────────────────────────────────────
   {
-    id: 'grok-4-6',
-    name: 'Grok 4.6',
+    id: 'grok-4-7',
+    name: 'Grok 4.7',
     provider: 'xAI (SpaceXAI)',
     providerColor: '#3f3f46',
-    category: ['language', 'reasoning', 'coding'],
+    category: ['language', 'reasoning', 'coding', 'multimodal'],
     openWeight: false,
-    released: '2026-08',
+    released: '2026-09',
     context: 500000,
     pricing: { input: 2, output: 6 },
-    params: '1.5T (V9)',
-    tagline: 'Frontier agent performance at a mid-tier price',
+    tagline: 'A major agentic upgrade at the same mid-tier price',
     description:
-      'xAI\'s August flagship focuses on long-running agents, coding, and visual work. Independent Artificial Analysis testing scores it 61, level with GPT-5.6 Sol and two points behind Opus 5, while its API remains $2/$6. The 500K context is half the window offered by several rivals, and its blind-chat arena rank trails its agentic benchmark standing.',
-    strengths: ['AA Intelligence Index 61', 'Strong agentic knowledge work', '$2/$6 frontier-class pricing', 'Four reasoning-effort levels'],
-    weaknesses: ['500K context trails 1M rivals', 'Preliminary Text Arena rank is mid-pack', 'Some coding results are vendor-reported'],
-    bestFor: ['Cost-efficient coding agents', 'Long-running engineering tasks', 'Interactive and visual work'],
-    benchmark: { label: 'AA Intelligence Index', score: '61' },
-    website: 'https://x.ai/news/grok-4-6',
+      'SpaceXAI\'s September flagship replaces 4.6 at the same $2/$6 short-context rate. Independent Artificial Analysis testing scores it 46 on Intelligence Index v4.3.2 and 56 on the Coding Agent Index, with large gains in coding and professional knowledge work. Those gains require heavy token use at xhigh effort, and prompts at or above 200K tokens cost $4/$12.',
+    strengths: ['AA Coding Agent Index 56', 'Strong agentic knowledge work', '$2/$6 short-context pricing', 'Four reasoning-effort levels'],
+    weaknesses: ['500K context trails 1M rivals', 'xhigh used about 81K output tokens per AA Intelligence task', 'Long-context rates double at 200K prompt tokens'],
+    bestFor: ['Cost-efficient coding agents', 'Professional document work', 'Long-running engineering tasks'],
+    benchmark: { label: 'AA Intelligence Index v4.3.2', score: '46' },
+    website: 'https://x.ai/news/grok-4-7',
     hot: true,
   },
 
@@ -547,23 +546,26 @@ export const MODELS: AIModel[] = [
     website: 'https://www.minimax.io',
   },
   {
-    id: 'mimo-v2-5',
-    name: 'MiMo-V2.5',
+    id: 'mimo-v2-6-pro',
+    name: 'MiMo-V2.6 Pro',
     provider: 'Xiaomi',
     providerColor: '#ff6900',
-    category: ['reasoning', 'coding'],
+    category: ['language', 'reasoning', 'coding', 'multimodal'],
     openWeight: true,
-    released: '2026-04',
-    context: 256000,
-    pricing: { input: 0.4, output: 2 },
-    license: 'Apache 2.0',
-    tagline: 'The smartphone giant\'s surprise reasoning play',
+    released: '2026-09',
+    context: 1000000,
+    pricing: { input: 0.435, output: 0.87 },
+    params: '1.02T MoE / 42B active',
+    license: 'MIT',
+    tagline: 'The new open-weight intelligence leader',
     description:
-      'Xiaomi\'s open reasoning line has quietly become a serious budget contender: V2.5 at $0.40/$2 with a Flash variant at a remarkable $0.10/$0.30 — among the cheapest reasoning-capable APIs from any major lab.',
-    strengths: ['Flash tier at $0.10/$0.30', 'Apache 2.0', 'Strong math for the price'],
-    weaknesses: ['Young ecosystem', 'Limited enterprise track record'],
-    bestFor: ['Budget reasoning', 'Edge and on-device experiments', 'High-volume inference'],
-    website: 'https://github.com/XiaomiMiMo',
+      'Xiaomi\'s open-weight omnimodal flagship combines a 1.02T-parameter MoE with 42B active parameters, 1M context, and text, image, video, and audio input. Independent Artificial Analysis testing ranks it first among open-weight models at 46 on Intelligence Index v4.3.2 and $0.13 per evaluated task. Xiaomi\'s own benchmark table is stronger than its predecessor but remains vendor-reported.',
+    strengths: ['#1 open-weight AA Intelligence Index', '1M omnimodal context', 'MIT-licensed weights', '$0.435/$0.87 API pricing'],
+    weaknesses: ['Very large self-hosting footprint', 'Some serving stacks still use V2.5-specific images', 'Verbose in independent testing', 'Vendor benchmark table needs broader replication'],
+    bestFor: ['Open-weight production agents', 'Multimodal automation', 'Long-context coding', 'Private enterprise inference'],
+    benchmark: { label: 'AA Intelligence Index v4.3.2', score: '46 (#1 open)' },
+    website: 'https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL',
+    hot: true,
   },
   {
     id: 'mistral-large-3',
