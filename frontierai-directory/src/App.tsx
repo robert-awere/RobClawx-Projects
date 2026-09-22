@@ -64,7 +64,7 @@ export default function App() {
           </h1>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-neutral-500">
             A curated directory of the models that matter right now — closed frontier systems from OpenAI,
-            Anthropic, and Google; the open-weight field led by Llama, DeepSeek, GLM, and Kimi;
+            Anthropic, and Google; the open-weight field led by MiMo, DeepSeek, GLM, and Kimi;
             and the current state of the art in image, video, and audio generation.
           </p>
           <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-3 border-t border-neutral-200 pt-5 text-sm">
