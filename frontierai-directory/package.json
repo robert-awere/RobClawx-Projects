@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "node scripts/build-articles.mjs && tsc -b && vite build",
     "check:articles": "node scripts/build-articles.mjs",
-    "lint": "eslint src/App.tsx src/main.tsx src/data",
+    "check:search": "node scripts/check-search.mjs",
+    "lint": "eslint src/App.tsx src/main.tsx src/data src/lib/model-search.ts",
     "preview": "vite preview"
   },
   "dependencies": {

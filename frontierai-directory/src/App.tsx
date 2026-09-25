@@ -9,6 +9,7 @@ import {
   type AIModel, type Category,
 } from '@/data/models';
 import { ARTICLES } from '@/data/articles';
+import { matchesModel } from '@/lib/model-search';
 
 const CATEGORY_ICONS: Record<Category, React.ReactNode> = {
   language: <MessageSquare className="w-3 h-3" />,
@@ -36,11 +37,7 @@ export default function App() {
       if (cat !== 'all' && !m.category.includes(cat)) return false;
       if (prov !== 'all' && m.provider !== prov) return false;
       if (openOnly && !m.openWeight) return false;
-      if (query) {
-        const hay = `${m.name} ${m.provider} ${m.tagline} ${m.description} ${m.bestFor.join(' ')}`.toLowerCase();
-        if (!hay.includes(query.toLowerCase())) return false;
-      }
-      return true;
+      return matchesModel(m, query);
     });
     return [...list].sort((a, b) => {
       if (sort === 'released') return b.released.localeCompare(a.released);
@@ -84,19 +81,21 @@ export default function App() {
       </header>
 
       {/* ── Controls ── */}
-      <div className="sticky top-0 z-30 border-b border-neutral-200 bg-[#faf9f7]/95 backdrop-blur">
+      <div className="sm:sticky top-0 z-30 border-b border-neutral-200 bg-[#faf9f7]/95 backdrop-blur">
         <div className="mx-auto max-w-6xl px-6 py-3.5 space-y-2.5">
           <div className="flex flex-wrap items-center gap-2.5">
             <div className="relative w-full sm:w-72">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-neutral-400" />
               <input
+                type="search"
+                aria-label="Search models, vendors, use cases"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search models, vendors, use cases"
                 className="w-full rounded-md border border-neutral-300 bg-white py-1.5 pl-9 pr-7 text-[13px] outline-none placeholder:text-neutral-400 focus:border-neutral-500 transition"
               />
               {query && (
-                <button onClick={() => setQuery('')} className="absolute right-2 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600">
+                <button aria-label="Clear search" onClick={() => setQuery('')} className="absolute right-2 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600">
                   <X className="w-3.5 h-3.5" />
                 </button>
               )}
