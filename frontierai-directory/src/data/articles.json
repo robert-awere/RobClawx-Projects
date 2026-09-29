@@ -427,5 +427,74 @@
         "url": "https://artificialanalysis.ai/articles/gpt-6-sol-and-luna-push-the-cost-efficiency-frontier"
       }
     ]
+  },
+  {
+    "slug": "claude-sonnet-5-5-vs-opus-5-5-gpt-6-sol",
+    "title": "Claude Sonnet 5.5 vs Opus 5.5 and GPT-6 Sol: which should you use?",
+    "description": "Sonnet 5.5 approaches Opus on agentic work at half the token price, but extreme token use complicates its value case against Opus and GPT-6 Sol.",
+    "published": "2026-09-29",
+    "models": [
+      "Claude Sonnet 5.5",
+      "Claude Opus 5.5",
+      "GPT-6 Sol"
+    ],
+    "sections": [
+      {
+        "heading": "Sonnet 5.5 closes the capability gap without closing the bill",
+        "paragraphs": [
+          "Claude Sonnet 5.5 replaces Sonnet 5 at the same $2 per million input tokens and $10 per million output tokens. Anthropic also lists cache writes at $2.50 and cache reads at $0.20 per million tokens, a one-million-token context window, text and image input, and a 128,000-token maximum output. Five effort settings—low, medium, high, xhigh, and max—let developers trade speed and token consumption for capability. On paper, that makes the migration look unusually easy: more capability and more than 30% faster generation without a higher token rate.",
+          "The independent results show why the effort setting matters more than the unchanged price. Artificial Analysis scores Sonnet 5.5 at 56 on its Intelligence Index at max effort, only two points behind Claude Opus 5.5. It also reports near-parity with Opus on agentic knowledge work and strong terminal performance. Yet the same run used roughly 193,000 output tokens per task, the highest output consumption the evaluator has measured and about 60% above Opus 5.5 max. At the tested settings, the nominally cheaper model cost about $7.60 per task, roughly 50% more than Sonnet 5 in the evaluator's previous run.",
+          "Those findings do not disprove Anthropic's claim that Sonnet 5.5 can cost up to 30% less per task than Sonnet 5. Anthropic's figure is vendor-reported, workload-dependent, and supported by examples in which the new model completes work in fewer steps. Artificial Analysis tested a different task mix at maximum effort. The defensible conclusion is narrower: Sonnet 5.5 is a major capability upgrade at the same posted rate, but max effort is not automatically the economical setting."
+        ]
+      },
+      {
+        "heading": "Choose Sonnet for scoped agent work, not as a miniature Opus",
+        "paragraphs": [
+          "Sonnet 5.5's strongest case is well-scoped work with objective or reviewable outputs: fixing bugs, implementing bounded features, navigating a codebase, operating software, and producing documents or slides from supplied material. Anthropic reports 70.6% on Terminal-Bench 4.0, 80.1% on a partial OSWorld 2.1 evaluation, and results within a few points of Opus 5.5 on several knowledge-work tests. Those exact launch-table numbers are vendor-reported. Artificial Analysis independently confirms the broader pattern, finding Sonnet close to Opus on Terminal-Bench, AA-Briefcase, GDPval-AA, and AutomationBench-AA.",
+          "Use lower effort first. Anthropic says its apps default to medium while the API defaults to high, and reports that low or medium effort can beat Sonnet 5's best result on some tasks for about one tenth of the task cost. That is still Anthropic's evaluation, but it suggests the right migration test: compare Sonnet 5.5 medium and high against the existing Sonnet 5 route before testing max. Maximum effort should be an escalation path for a task that failed a cheaper setting, not a global switch.",
+          "There is also a migration detail that can break an otherwise simple model-name change. Applications that currently run Sonnet with thinking disabled must move to Anthropic's new between-tools setting before switching to Sonnet 5.5. The model also introduces cyber safeguards that can visibly fall back to Sonnet 5 on a narrow set of higher-risk requests. Teams evaluating security work should record the model actually served; a fallback result is not a clean Sonnet 5.5 measurement."
+        ]
+      },
+      {
+        "heading": "Opus 5.5 remains the better choice when judgment is the product",
+        "paragraphs": [
+          "Claude Opus 5.5 costs twice as much per uncached token at $4 input and $20 output, while cache reads cost the same $0.20 as Sonnet. The higher rate buys a stronger and more consistent ceiling rather than a universal twofold quality gain. Artificial Analysis scores Opus max at 58 versus Sonnet max at 56 and finds the two close on agentic knowledge work. Opus separates more clearly on factual knowledge and scientific reasoning: the evaluator reports 66% factual accuracy for Opus against 54% for Sonnet, and a gap of roughly six points on Humanity's Last Exam and SciCode.",
+          "That makes Opus the safer route when the deliverable itself requires sustained judgment: ambiguous architecture decisions, scientific analysis, complex research synthesis, high-stakes professional documents, and final review where a subtle omission is expensive. Sonnet can match Opus on particular benchmarked workflows by spending far more tokens, but benchmark parity reached through 193,000 output tokens is not the same operating profile. Opus may finish a difficult task with fewer tokens, less review, or fewer retries even though each token costs more.",
+          "Do not route every final draft to Opus by habit. For structured documents, routine analysis, and implementation work with explicit acceptance criteria, Sonnet may produce accepted work at lower total cost. The useful dividing line is not 'important' versus 'unimportant.' It is whether success can be checked cheaply. When tests, schemas, checklists, or a fast human review expose failure, Sonnet is a strong default. When quality depends on nuanced judgment that is expensive to verify, Opus deserves the first attempt."
+        ]
+      },
+      {
+        "heading": "GPT-6 Sol is the cost control Sonnet still has to beat",
+        "paragraphs": [
+          "GPT-6 Sol shares Sonnet 5.5's $2/$10 headline pricing and roughly one-million-token context class, so it is the more useful economic comparison than Opus. Artificial Analysis scores Sol max at 48, below Sonnet's 56, and Sonnet is substantially stronger in the evaluator's long-horizon professional-work results. Sol nevertheless uses fewer output tokens across comparable effort bands. Artificial Analysis says Sonnet's low, medium, and high settings sit behind Sol high, xhigh, and max on intelligence versus output tokens, while Sonnet high is only narrowly behind Sol on intelligence at effectively the same measured task cost.",
+          "The practical split follows the independent evidence. Start with Sonnet for polished knowledge work, terminal tasks, computer use, and workflows where complete requirement coverage matters. Keep Sol in the evaluation for coding queues and structured agents whose outputs can be tested automatically, especially when token volume drives the bill. Neither model wins from the posted price because their rates are identical; the winner is the one that reaches acceptance with fewer tokens, retries, and reviewer minutes.",
+          "A minimal evaluation needs only twenty to fifty completed tasks and three routes: Sonnet medium, Sonnet high, and the current Sol setting. Add Opus only for tasks that fail or require expensive review. Record accepted completion, omitted requirements, reviewer time, retries, tool calls, input, cached input, output tokens, latency, fallback behavior, and billed cost. The default recommendation is Sonnet 5.5 at medium or high for scoped production work, GPT-6 Sol as the efficiency control, and Opus 5.5 as the judgment-heavy escalation path. Max effort belongs behind evidence, not behind a product name."
+        ],
+        "bullets": [
+          "Default trial: Claude Sonnet 5.5 at medium or high effort for scoped coding and knowledge work.",
+          "Efficiency control: GPT-6 Sol on machine-checkable coding and structured agent tasks.",
+          "Premium escalation: Claude Opus 5.5 for ambiguous work, scientific reasoning, and expensive failures.",
+          "Vendor-reported: Anthropic's speed, cost-saving, and launch benchmark claims; independently measured: Artificial Analysis intelligence, task cost, and token-use results."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Anthropic: Introducing Claude Sonnet 5.5",
+        "url": "https://www.anthropic.com/claude-sonnet-5-5"
+      },
+      {
+        "label": "Anthropic: Claude models overview",
+        "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview"
+      },
+      {
+        "label": "Anthropic: Claude API pricing",
+        "url": "https://docs.anthropic.com/en/docs/about-claude/pricing"
+      },
+      {
+        "label": "Artificial Analysis: Claude Sonnet 5.5 evaluation",
+        "url": "https://artificialanalysis.ai/articles/claude-sonnet-5-5"
+      }
+    ]
   }
 ]

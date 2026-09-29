@@ -33,7 +33,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
-export const LAST_UPDATED = '2026-09-25';
+export const LAST_UPDATED = '2026-09-29';
 
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
@@ -78,22 +78,24 @@ export const MODELS: AIModel[] = [
     hot: true,
   },
   {
-    id: 'claude-sonnet-5',
-    name: 'Claude Sonnet 5',
+    id: 'claude-sonnet-5-5',
+    name: 'Claude Sonnet 5.5',
     provider: 'Anthropic',
     providerColor: '#c45f3d',
-    category: ['language', 'coding'],
+    category: ['language', 'reasoning', 'coding', 'multimodal'],
     openWeight: false,
-    released: '2026-06',
+    released: '2026-09',
     context: 1000000,
     pricing: { input: 2, output: 10 },
-    tagline: 'Anthropic\'s agentic value tier',
+    tagline: 'Near-Opus agent performance at half the token price',
     description:
-      'Anthropic\'s current balanced tier replaces Sonnet 4.6 with stronger planning, tool use, coding, and computer use. Its permanent $2/$10 API price is one third below the previous Sonnet rate, while the 1M context window and selectable effort levels cover most production agent workloads.',
-    strengths: ['1M context at $2/$10', 'Strong agentic coding and computer use', 'Selectable reasoning effort'],
-    weaknesses: ['Hardest reasoning belongs to Opus/Fable', 'Vendor benchmark gains need workload-specific validation'],
-    bestFor: ['Production coding', 'Browser automation', 'Everyday enterprise agents'],
-    website: 'https://www.anthropic.com/news/claude-sonnet-5',
+      'Anthropic\'s September workhorse keeps Sonnet 5\'s $2/$10 pricing while adding five effort levels and faster generation. Independent Artificial Analysis testing scores max effort at 56, two points behind Opus 5.5, but records the highest output-token use in its evaluation. Lower effort settings are therefore the more credible value route.',
+    strengths: ['AA Intelligence Index 56 at max effort', 'Strong terminal and knowledge work', '1M multimodal context', '$0.20 cache reads'],
+    weaknesses: ['Max effort used about 193K output tokens per AA task', 'Opus remains stronger on factual and scientific reasoning', 'Cyber safeguards can trigger fallback to Sonnet 5'],
+    bestFor: ['Production coding', 'Polished documents and slides', 'Computer-use agents', 'Everyday enterprise workflows'],
+    benchmark: { label: 'AA Intelligence Index v4.3.2', score: '56 (#2)' },
+    website: 'https://www.anthropic.com/claude-sonnet-5-5',
+    hot: true,
   },
   {
     id: 'claude-haiku-4-5',
