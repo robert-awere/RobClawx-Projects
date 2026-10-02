@@ -33,7 +33,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
-export const LAST_UPDATED = '2026-09-29';
+export const LAST_UPDATED = '2026-10-02';
 
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
@@ -138,8 +138,8 @@ export const MODELS: AIModel[] = [
     hot: true,
   },
   {
-    id: 'gpt-6-sol',
-    name: 'GPT-6 Sol',
+    id: 'gpt-6-1-sol',
+    name: 'GPT-6.1 Sol',
     provider: 'OpenAI',
     providerColor: '#0d8a6a',
     category: ['language', 'reasoning', 'coding', 'multimodal'],
@@ -147,14 +147,14 @@ export const MODELS: AIModel[] = [
     released: '2026-09',
     context: 1050000,
     pricing: { input: 2, output: 10 },
-    tagline: 'The new hosted price-performance control',
+    tagline: 'Near-Astra intelligence at Sol pricing',
     description:
-      'OpenAI\'s September replacement for GPT-5.6 Sol halves pricing to $2/$10 while retaining 1.05M context and multimodal input. Independent Artificial Analysis testing scores max effort at 48 and its Coding Agent Index at 57, two points above its predecessor at roughly half the evaluated task cost. Some knowledge-work results regressed, so it is a value upgrade rather than a universal quality upgrade.',
-    strengths: ['AA Coding Agent Index 57', 'Strong autonomous engineering', '1.05M context', '80% cheaper per token than Astra'],
-    weaknesses: ['Astra retains the higher capability ceiling', 'Knowledge-work presentation regressed in independent tests', 'Cache writes cost 1.25x input', 'Long-context surcharge above 272K input'],
-    bestFor: ['Autonomous engineering agents', 'Long-horizon professional workflows', 'Terminal and DevOps automation'],
-    benchmark: { label: 'AA Intelligence Index v4.3.2', score: '48' },
-    website: 'https://developers.openai.com/api/docs/models/gpt-6-sol',
+      'OpenAI\'s September 29 upgrade keeps GPT-6 Sol\'s $2/$10 rates while halving cached-input cost to $0.10. Independent Artificial Analysis testing scores max effort at 52, one point behind Astra, at less than one quarter of Astra\'s evaluated task cost. It uses more output tokens than Sol, so lower effort settings remain important.',
+    strengths: ['AA Intelligence Index 52', 'Near-Astra agentic capability', '1.05M context and 128K max output', '95% cached-input discount'],
+    weaknesses: ['Used 10–30% more output tokens than GPT-6 Sol in independent testing', 'Astra retains the higher scientific and cyber ceiling', 'Cache writes cost 1.25x input', 'Long-context surcharge above 272K input'],
+    bestFor: ['Production coding agents', 'Computer-use automation', 'Professional document workflows', 'Cost-sensitive complex reasoning'],
+    benchmark: { label: 'AA Intelligence Index v4.3.2', score: '52' },
+    website: 'https://developers.openai.com/api/docs/models/gpt-6.1-sol',
     hot: true,
   },
   {
@@ -197,6 +197,26 @@ export const MODELS: AIModel[] = [
   },
 
   // ── Google ──────────────────────────────────────────────
+  {
+    id: 'gemini-4-argon',
+    name: 'Gemini 4 Argon',
+    provider: 'Google DeepMind',
+    providerColor: '#2f6bd8',
+    category: ['language', 'reasoning', 'coding', 'multimodal'],
+    openWeight: false,
+    released: '2026-09',
+    context: null,
+    pricing: { input: 2, output: 10 },
+    tagline: 'A frontier preview with unusually long output',
+    description:
+      'Google\'s next frontier model is currently restricted to trusted cyber defenders and testers, with broader paid API and Ultra access promised but not yet dated. Google announces introductory $2/$10 pricing and a 1M-token maximum output; early Arena results rank the high-effort model first for text, while broader independent evaluation remains incomplete.',
+    strengths: ['#1 early Arena Text ranking', '1M-token maximum output', 'Strong long-horizon coding and knowledge-work claims', '95% cached-input discount at launch'],
+    weaknesses: ['Not generally available', 'Input context window not yet published', 'Most benchmark evidence is vendor-reported', 'Introductory pricing later doubles to $4/$20'],
+    bestFor: ['Early frontier evaluation', 'Long-horizon coding research', 'Complex enterprise workflows', 'Authorized defensive cybersecurity'],
+    benchmark: { label: 'Arena Text (early)', score: '#1' },
+    website: 'https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/',
+    hot: true,
+  },
   {
     id: 'gemini-3-1-pro',
     name: 'Gemini 3.1 Pro',
