@@ -33,7 +33,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
-export const LAST_UPDATED = '2026-10-02';
+export const LAST_UPDATED = '2026-10-06';
 
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
@@ -207,13 +207,13 @@ export const MODELS: AIModel[] = [
     released: '2026-09',
     context: null,
     pricing: { input: 2, output: 10 },
-    tagline: 'A frontier preview with unusually long output',
+    tagline: 'A restricted frontier preview that matches Astra independently',
     description:
-      'Google\'s next frontier model is currently restricted to trusted cyber defenders and testers, with broader paid API and Ultra access promised but not yet dated. Google announces introductory $2/$10 pricing and a 1M-token maximum output; early Arena results rank the high-effort model first for text, while broader independent evaluation remains incomplete.',
-    strengths: ['#1 early Arena Text ranking', '1M-token maximum output', 'Strong long-horizon coding and knowledge-work claims', '95% cached-input discount at launch'],
-    weaknesses: ['Not generally available', 'Input context window not yet published', 'Most benchmark evidence is vendor-reported', 'Introductory pricing later doubles to $4/$20'],
+      'Google\'s next frontier model remains restricted to trusted cyber defenders and testers, with broader paid API and Ultra access promised but not yet dated. Independent Artificial Analysis testing scores high effort at 53, matching GPT-6 Astra, while measuring a 15% hallucination rate and much heavier output-token use. Google announces introductory $2/$10 pricing and a 1M-token maximum output.',
+    strengths: ['AA Intelligence Index 53', '#1 preliminary Arena Text ranking', '1M-token maximum output', '95% cached-input discount at launch'],
+    weaknesses: ['Not generally available', 'Input context window not yet published', 'Used about 62K output tokens per AA task', 'Introductory pricing later doubles to $4/$20'],
     bestFor: ['Early frontier evaluation', 'Long-horizon coding research', 'Complex enterprise workflows', 'Authorized defensive cybersecurity'],
-    benchmark: { label: 'Arena Text (early)', score: '#1' },
+    benchmark: { label: 'AA Intelligence Index v4.3.2', score: '53' },
     website: 'https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/',
     hot: true,
   },

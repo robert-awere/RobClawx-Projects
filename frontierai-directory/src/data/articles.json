@@ -502,6 +502,7 @@
     "title": "GPT-6.1 Sol vs Gemini 4 Argon: buy now or wait?",
     "description": "GPT-6.1 Sol is available now while Gemini 4 Argon remains restricted. Independent evidence clarifies what to adopt, test, and defer.",
     "published": "2026-10-02",
+    "updated": "2026-10-06",
     "models": [
       "GPT-6.1 Sol",
       "Gemini 4 Argon",
@@ -525,11 +526,11 @@
         ]
       },
       {
-        "heading": "Argon's early signal is credible, but most of the evidence is still Google's",
+        "heading": "Argon now has independent frontier evidence, but remains a preview",
         "paragraphs": [
           "Google reports that Argon scores 77.9% on DeepSWE v1.1, 51.3% on AutomationBench, and 91.7% on the long-video LVBench evaluation. It also describes large internal code migrations and optimization work, including Rust ports and data-center memory savings. These examples suggest where Google expects the model to excel: long-horizon engineering, enterprise knowledge work, visual analysis, and defensive cybersecurity. They remain vendor-reported results produced or selected for a launch, not independent proof that Argon will outperform available models under another harness.",
-          "Arena supplies the first independent counterweight. Its current release summary ranks Gemini 4 Argon high first for text preference. The Agent Arena places Argon high eighth overall with a 7.92% estimated success rate and a wide confidence interval, while showing an estimated $0.65 per task. That early agent result is promising but not dominant: Claude Fable 5.1, Claude Opus 5.5, GPT-6 Astra, and the older GPT-6 Sol appear above it in the current table. Different Arena sections measure different behavior, so first place in text preference should not be reported as first place in autonomous work.",
-          "Artificial Analysis has created an Argon model page but does not yet expose a completed independent Intelligence Index result. Combined with restricted access, missing API documentation, and unpublished input context, that leaves too many operational variables for a production recommendation. The correct status is watch and evaluate when access arrives. Teams in Google's trusted defender cohort have a reason to test now; ordinary API buyers should not redesign routing or procurement around an announced model they cannot yet run."
+          "Independent testing now provides a stronger counterweight. Artificial Analysis scores Argon high at 53 on Intelligence Index v4.3.2, matching GPT-6 Astra and finishing one point above GPT-6.1 Sol. It also reports a 15% hallucination rate, the lowest among models scoring at least 45 in that evaluation, but lower raw factual accuracy than Astra. Argon led AutomationBench-AA at 78% and reached 57% on Terminal-Bench 4.0, while its knowledge-work presentation quality was less convincing than its rubric coverage. These results establish a frontier-level model, not a universal winner.",
+          "The economics also need context. Artificial Analysis measured about $1.99 per Intelligence Index task at Google's introductory price, versus $3.26 for Astra and $0.72 for GPT-6.1 Sol. Argon used roughly 62,000 output tokens per task, more than twice Astra's 27,000, so its current cost advantage over Astra comes from lower token rates rather than token efficiency. Arena separately ranks Argon high first for text preference but tenth in its October 2 Agent Arena table, reinforcing that conversational preference and autonomous work are different measures. Restricted access, missing general API documentation, and an unpublished input context still leave too many operational variables for a production recommendation."
         ]
       },
       {
@@ -543,7 +544,7 @@
           "Available value default: GPT-6.1 Sol, tested at medium and xhigh rather than max alone.",
           "Premium escape hatch: GPT-6 Astra only where owned evaluations justify the additional cost.",
           "Watchlist: Gemini 4 Argon until broad API access, input-context documentation, and fuller independent results arrive.",
-          "Vendor-reported: OpenAI and Google launch benchmarks; independently measured: Artificial Analysis Sol results and Arena's early Argon rankings."
+          "Vendor-reported: OpenAI and Google launch benchmarks; independently measured: Artificial Analysis results for Sol and Argon, plus Arena's early Argon rankings."
         ]
       }
     ],
@@ -559,6 +560,10 @@
       {
         "label": "Artificial Analysis: GPT-6.1 Sol independent evaluation",
         "url": "https://artificialanalysis.ai/articles/gpt-6-1-sol-replaces-gpt-6-sol-after-just-7-days-with-near-astra-intelligence"
+      },
+      {
+        "label": "Artificial Analysis: Gemini 4 Argon independent evaluation",
+        "url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs"
       },
       {
         "label": "Google: Introducing Gemini 4 Argon",
