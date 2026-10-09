@@ -33,7 +33,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
-export const LAST_UPDATED = '2026-10-06';
+export const LAST_UPDATED = '2026-10-09';
 
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
@@ -89,8 +89,8 @@ export const MODELS: AIModel[] = [
     pricing: { input: 2, output: 10 },
     tagline: 'Near-Opus agent performance at half the token price',
     description:
-      'Anthropic\'s September workhorse keeps Sonnet 5\'s $2/$10 pricing while adding five effort levels and faster generation. Independent Artificial Analysis testing scores max effort at 56, two points behind Opus 5.5, but records the highest output-token use in its evaluation. Lower effort settings are therefore the more credible value route.',
-    strengths: ['AA Intelligence Index 56 at max effort', 'Strong terminal and knowledge work', '1M multimodal context', '$0.20 cache reads'],
+      'Anthropic\'s September workhorse keeps Sonnet 5\'s $2/$10 pricing while adding five effort levels and faster generation. Independent Artificial Analysis testing scores max effort at 56, two points behind Opus 5.5, but records the highest output-token use in its evaluation. Cache reads fell to $0.10 per million tokens on October 7, making lower effort with reused context the more credible value route.',
+    strengths: ['AA Intelligence Index 56 at max effort', 'Strong terminal and knowledge work', '1M multimodal context', '$0.10 cache reads'],
     weaknesses: ['Max effort used about 193K output tokens per AA task', 'Opus remains stronger on factual and scientific reasoning', 'Cyber safeguards can trigger fallback to Sonnet 5'],
     bestFor: ['Production coding', 'Polished documents and slides', 'Computer-use agents', 'Everyday enterprise workflows'],
     benchmark: { label: 'AA Intelligence Index v4.3.2', score: '56 (#2)' },
@@ -98,22 +98,24 @@ export const MODELS: AIModel[] = [
     hot: true,
   },
   {
-    id: 'claude-haiku-4-5',
-    name: 'Claude Haiku 4.5',
+    id: 'claude-haiku-5-5',
+    name: 'Claude Haiku 5.5',
     provider: 'Anthropic',
     providerColor: '#c45f3d',
-    category: ['language'],
+    category: ['language', 'reasoning', 'coding', 'multimodal'],
     openWeight: false,
-    released: '2025-10',
-    context: 200000,
-    pricing: { input: 1, output: 5 },
-    tagline: 'Anthropic\'s speed tier',
+    released: '2026-10',
+    context: 1000000,
+    pricing: { input: 0.1, output: 0.5 },
+    tagline: 'A capable small agent at commodity short-context prices',
     description:
-      'The lightweight Claude: very low latency with coding ability that outperforms its price point (39.5% SEAL Pro). Suited to real-time chat, inline completion, and high-concurrency services.',
-    strengths: ['Low latency', 'Best coding at its price', 'Stable subagent for swarms'],
-    weaknesses: ['200K context only', 'Limited ceiling on complex tasks'],
-    bestFor: ['Real-time chat', 'Inline code completion', 'Subagents and high-concurrency APIs'],
-    website: 'https://www.anthropic.com',
+      'Anthropic\'s October small model expands to 1M context, adaptive effort, and $0.10/$0.50 pricing for prompts up to 100K tokens. Independent Artificial Analysis testing scores max effort at 43, ahead of GPT-6 Luna, but records about 162K output tokens per task at max. Longer prompts cost five times more, so the headline rate is not a long-context rate.',
+    strengths: ['AA Intelligence Index 43 at max effort', '1M multimodal context', '$0.10/$0.50 up to 100K prompt tokens', 'Anthropic\'s fastest standard-speed model'],
+    weaknesses: ['Rates rise to $0.50/$2.50 above 100K prompt tokens', 'Max effort used about 162K output tokens per AA task', 'New tokenizer uses roughly 30% more tokens than Haiku 4.5', 'Independent automation test was affected by over-refusal'],
+    bestFor: ['Classification and extraction', 'High-volume subagents', 'Live support', 'Browser and computer use'],
+    benchmark: { label: 'AA Intelligence Index', score: '43' },
+    website: 'https://www.anthropic.com/claude-haiku-5-5',
+    hot: true,
   },
 
   // ── OpenAI ──────────────────────────────────────────────
@@ -587,6 +589,28 @@ export const MODELS: AIModel[] = [
     bestFor: ['Open-weight production agents', 'Multimodal automation', 'Long-context coding', 'Private enterprise inference'],
     benchmark: { label: 'AA Intelligence Index v4.3.2', score: '46 (#1 open)' },
     website: 'https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL',
+    hot: true,
+  },
+  {
+    id: 'mistral-large-4-preview',
+    name: 'Mistral Large 4 Preview',
+    provider: 'Mistral AI',
+    providerColor: '#e05e00',
+    category: ['language', 'reasoning', 'coding', 'multimodal'],
+    openWeight: false,
+    released: '2026-10',
+    context: 524288,
+    contextLabel: '512K API',
+    pricing: { input: 1.36, output: 4.18 },
+    params: '1.05T MoE / 52B active',
+    tagline: 'Europe\'s strongest model, with open weights still pending',
+    description:
+      'Mistral\'s public-preview flagship is a natively multimodal 1.05T MoE with 52B active parameters. Independent Artificial Analysis testing scores it 38, comparable to GPT-6 Luna, and 50 on the Cyber Index. Mistral advertises 1M model context and promises weights by the end of October; the tested preview endpoint exposes 512K, and the weights are not yet downloadable.',
+    strengths: ['AA Intelligence Index 38', 'AA Cyber Index 50', 'Native text and image input', 'European training and serving infrastructure'],
+    weaknesses: ['Weights and license are not yet available', 'Public preview rather than stable release', 'Very verbose in independent testing', 'Standard task cost trails similarly capable open-weight rivals'],
+    bestFor: ['European sovereign-AI evaluation', 'Multilingual enterprise work', 'Cybersecurity evaluation', 'Multimodal document workflows'],
+    benchmark: { label: 'AA Intelligence Index', score: '38' },
+    website: 'https://mistral.ai/news/mistral-large-4/',
     hot: true,
   },
   {
