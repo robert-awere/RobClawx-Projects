@@ -33,7 +33,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
-export const LAST_UPDATED = '2026-10-09';
+export const LAST_UPDATED = '2026-10-13';
 
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
@@ -508,6 +508,27 @@ export const MODELS: AIModel[] = [
 
   // ── Meta ────────────────────────────────────────────────
   {
+    id: 'muse-wonder',
+    name: 'Muse Wonder',
+    provider: 'Meta',
+    providerColor: '#0553c4',
+    category: ['language', 'reasoning', 'coding', 'multimodal'],
+    openWeight: false,
+    released: '2026-10',
+    context: 1048576,
+    contextLabel: '1M',
+    pricing: { input: 4, output: 20 },
+    tagline: 'A frontier agent model whose stronger Full sibling is not on the API',
+    description:
+      'Meta\'s API-accessible frontier model handles text, image, video, and audio across a 1M context window. Independent Artificial Analysis testing scores max effort at 52 and the subscription-only Muse Wonder Full at 56. The standard model costs $4/$20 and $4.52 per evaluated task, making it a capability option rather than a price-performance leader.',
+    strengths: ['AA Intelligence Index 52', 'AA Coding Agents Index 63', '1M multimodal context', 'Strong automation and terminal results'],
+    weaknesses: ['$4.52 per AA Intelligence task', 'Wonder Full is limited to Muse Code subscriptions', 'Knowledge accuracy trails Opus 5.5 and GPT-6 Astra', 'Closed weights'],
+    bestFor: ['Long-running professional agents', 'Complex coding workflows', 'Computer-use automation', 'Multimodal document work'],
+    benchmark: { label: 'AA Intelligence Index v4.3.2', score: '52' },
+    website: 'https://developer.meta.com/ai/models/muse-wonder/',
+    hot: true,
+  },
+  {
     id: 'muse-spark-1-3',
     name: 'Muse Spark 1.3',
     provider: 'Meta',
@@ -518,13 +539,13 @@ export const MODELS: AIModel[] = [
     context: 1048576,
     contextLabel: '1M',
     pricing: { input: 1.25, output: 4.25 },
-    tagline: 'The lowest measured task cost at its intelligence tier',
+    tagline: 'Meta\'s lower-cost agent tier after Wonder moves the ceiling',
     description:
-      'Meta\'s proprietary agentic model reaches 61 on the independent Artificial Analysis Intelligence Index at $1.25/$4.25, with 1M context and text, image, video, and document inputs. A $0.10/$0.20 Contributor endpoint uses prompts and completions to improve Meta products, so it is not a like-for-like privacy tier.',
-    strengths: ['AA Intelligence Index 61', '$1.25/$4.25 standard pricing', '1M multimodal context', 'Strong agentic and coding results'],
-    weaknesses: ['Closed weights', 'Max effort remains limited-access', 'Contributor discount permits training on customer traffic', 'Long-context reasoning regressed in independent tests'],
+      'Meta\'s lower-cost proprietary agent model scores 48 at max effort on the current independent Artificial Analysis Intelligence Index, behind Muse Wonder\'s 52 but at $1.25/$4.25 instead of $4/$20. Its 1M multimodal context and agentic tooling remain useful. The $0.10/$0.20 Contributor endpoint permits Meta to use traffic to improve its products.',
+    strengths: ['AA Intelligence Index 48 at max effort', '$1.25/$4.25 standard pricing', '1M multimodal context', 'Strong agentic tooling'],
+    weaknesses: ['Closed weights', 'Wonder is materially stronger on terminal and automation tasks', 'Contributor discount permits training on customer traffic', 'Knowledge accuracy trails frontier leaders'],
     bestFor: ['Cost-efficient coding agents', 'Multimodal workflow automation', 'Long-running tool use', 'High-volume knowledge work'],
-    benchmark: { label: 'AA Intelligence Index', score: '61' },
+    benchmark: { label: 'AA Intelligence Index v4.3.2', score: '48' },
     website: 'https://developer.meta.com/ai/models/muse-spark/',
     hot: true,
   },

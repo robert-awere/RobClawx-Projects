@@ -574,5 +574,83 @@
         "url": "https://arena.ai/leaderboard"
       }
     ]
+  },
+  {
+    "slug": "muse-wonder-vs-opus-5-5-gpt-6-1-sol",
+    "title": "Muse Wonder vs Opus 5.5 and GPT-6.1 Sol: what should you use?",
+    "description": "Meta now has a genuine frontier agent model, but its stronger Full variant is not on the API and the standard model faces severe value competition.",
+    "published": "2026-10-13",
+    "models": [
+      "Muse Wonder",
+      "Muse Spark 1.3",
+      "Claude Opus 5.5",
+      "GPT-6.1 Sol"
+    ],
+    "sections": [
+      {
+        "heading": "Muse Wonder is a real frontier release, but the product name hides two offers",
+        "paragraphs": [
+          "Meta's October 12 release contains two related models with materially different access. Muse Wonder is available through the Meta Model API and Muse Code at $4 per million input tokens, $0.20 per million cached input tokens, and $20 per million output tokens. Muse Wonder Full is the more capable model in both Meta's launch table and independent testing, but it is available only through Muse Code's Power and Maximum subscription plans. A buyer comparing an API workload with Claude or OpenAI can purchase standard Wonder by the token; it cannot purchase Wonder Full on the same basis.",
+          "Both models accept text, image, video, and audio, return text, and expose a one-million-token context window. Meta positions them for long-running agents, coding, computer use, and professional work. The official model card also describes known limits: inaccurate or biased answers remain possible, novel multi-step reasoning can fail, visual and spatial reasoning is weaker on some three-dimensional tasks, and results depend on prompts, tools, serving configuration, and the agent harness. Those caveats matter because the launch benchmark table mixes Meta-run results, provider-reported results, and named third-party evaluations rather than one controlled test.",
+          "Artificial Analysis supplies the cleanest independent comparison available at launch. It scores Muse Wonder at 52 and Wonder Full at 56 on Intelligence Index v4.3.2. Standard Wonder reaches 63 on the evaluator's Coding Agents Index, while Full reaches 68 in Muse Code. Those are strong results and establish Meta as a credible frontier-agent supplier. They do not support quoting Full's 56 as the performance of the $4/$20 API model."
+        ]
+      },
+      {
+        "heading": "At the same token price, Opus 5.5 remains the safer judgment-heavy default",
+        "paragraphs": [
+          "Claude Opus 5.5 and Muse Wonder share the same $4 input, $0.20 cached-input, and $20 output rates per million tokens. On Artificial Analysis's current index, Opus scores 58 at maximum effort versus Wonder's 52. Opus also remains substantially stronger on the evaluator's factual-knowledge measure: the Wonder analysis reports a score of 25 for standard Wonder, compared with 46 for Opus. Wonder partly offsets that weakness with a low hallucination rate, but answering fewer questions incorrectly is not equivalent to knowing more of the answers a workflow needs.",
+          "Wonder's stronger case is agentic execution. Artificial Analysis reports meaningful gains over Muse Spark 1.3 in terminal work, automation, coding agents, and professional deliverables. Meta's official material adds active memory and active focus, intended to retain important context and persist through long tasks. Those features may be valuable for agents that revisit projects or recover from tool failures, but Meta's MemoryBench and Personal Superintelligence Index are internal evaluations. Treat them as vendor-reported reasons to test, not proof that a production agent will remember the right customer constraint or recover safely from every failure.",
+          "For ambiguous analysis, scientific reasoning, factual research, and final deliverables where subtle omissions are expensive, Opus remains the better first control. Wonder deserves a trial for long-running coding, computer use, and workflows already benefiting from Meta's API or Muse Code. Since their token rates are identical, the decision should come from accepted completion, reviewer minutes, retries, and tool reliability rather than list price."
+        ]
+      },
+      {
+        "heading": "GPT-6.1 Sol and Muse Spark make Wonder's value problem visible",
+        "paragraphs": [
+          "GPT-6.1 Sol scores the same 52 as standard Muse Wonder on the current Artificial Analysis Intelligence Index while charging $2/$10, half Wonder's uncached token rates. In the evaluator's runs, Sol cost about $0.72 per Intelligence Index task; Wonder cost $4.52. The difference is not explained by output alone. Artificial Analysis measured Wonder using about 7.69 million input tokens per task, including cache writes and hits, so input processing produced roughly three quarters of the evaluated bill. Long context and agent traces can make a premium input rate matter even when cache reads are cheap.",
+          "The composite tie does not make the models interchangeable. Wonder's independent results are especially promising in automation, terminal work, and coding agents, while GPT-6.1 Sol has its own strengths and a much lower measured task cost. The appropriate test is therefore workload-specific: compare Wonder max with the Sol effort setting already used in production, keep tools and acceptance checks equivalent, and record every input, cache write, cache hit, output token, retry, and reviewer intervention. A sixfold benchmark-task cost gap gives Wonder a high burden of proof.",
+          "Meta's own Muse Spark 1.3 creates another control. It scores 48 at max effort on the current independent index, four points behind Wonder, but costs $1.25/$4.25. Wonder materially improves terminal and automation results, yet Artificial Analysis measured it at about 2.8 times Spark's task cost. Teams already using Spark should route only failed, unusually difficult, or high-value cases to Wonder until owned evaluations show that a broader migration reduces total rework. The separate Contributor endpoint is not a neutral bargain: its lower price permits Meta to use prompts and completions to improve its products, so confidential workloads require an explicit data-policy decision."
+        ]
+      },
+      {
+        "heading": "Buy the model you can actually deploy, then test Full separately",
+        "paragraphs": [
+          "Start with twenty to fifty completed tasks that represent the intended agent workload. Include long repositories, tool failures, multimodal documents, cases that previously needed correction, and irreversible actions that require confirmation. Run standard Wonder, Opus 5.5, and GPT-6.1 Sol with comparable tools and explicit effort settings. Record accepted completion, factual errors, omitted requirements, reviewer time, retries, tool calls, latency, all token classes, and billed cost. For computer use, separate partial progress from verified completion; an agent that navigates convincingly but leaves the application in the wrong state has failed.",
+          "Evaluate Wonder Full as a different product. Its independent score of 56 and Coding Agents Index result of 68 are impressive, but there is no per-token API, no comparable task-cost figure, and no evidence that a Muse Code subscription reproduces every custom production harness. Full makes sense as a coding-tool trial for developers whose workflow fits Muse Code. It should not be used to justify an API migration to the weaker standard model.",
+          "The practical recommendation is narrow. Keep Opus 5.5 as the judgment-heavy control, GPT-6.1 Sol as the price-performance control, and Muse Spark as Meta's cheaper internal control. Pilot Muse Wonder where persistent agents, terminal work, computer use, or multimodal context could plausibly overcome its higher measured cost. Meta has earned a place in the frontier evaluation set; it has not earned an automatic default from the stronger sibling's headline score."
+        ],
+        "bullets": [
+          "API candidate: Muse Wonder at 52 on the independent Intelligence Index and $4/$20 per million tokens.",
+          "Do not conflate products: Muse Wonder Full scores 56 but is limited to Muse Code subscriptions.",
+          "Same-price control: Claude Opus 5.5 for judgment-heavy and factual work.",
+          "Value control: GPT-6.1 Sol at the same independent score and much lower measured task cost."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Meta: Muse Wonder model and pricing",
+        "url": "https://developer.meta.com/ai/models/muse-wonder/"
+      },
+      {
+        "label": "Meta: Muse Wonder model card",
+        "url": "https://research.meta.ai/static/muse-wonder-model-card"
+      },
+      {
+        "label": "Meta: Muse Spark 1.3 model and pricing",
+        "url": "https://developer.meta.com/ai/models/muse-spark/"
+      },
+      {
+        "label": "Artificial Analysis: Muse Wonder independent evaluation",
+        "url": "https://artificialanalysis.ai/articles/muse-wonder"
+      },
+      {
+        "label": "Anthropic: Claude Opus 5.5",
+        "url": "https://www.anthropic.com/claude-opus-5-5"
+      },
+      {
+        "label": "OpenAI API: GPT-6.1 Sol model documentation",
+        "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
+      }
+    ]
   }
 ]
