@@ -33,7 +33,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
-export const LAST_UPDATED = '2026-10-13';
+export const LAST_UPDATED = '2026-10-16';
 
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
@@ -207,16 +207,17 @@ export const MODELS: AIModel[] = [
     category: ['language', 'reasoning', 'coding', 'multimodal'],
     openWeight: false,
     released: '2026-09',
-    context: null,
+    context: 1048576,
+    contextLabel: '1M unified',
     pricing: { input: 2, output: 10 },
-    tagline: 'A restricted frontier preview that matches Astra independently',
+    tagline: 'Generally available frontier reasoning with long-decode support',
     description:
-      'Google\'s next frontier model remains restricted to trusted cyber defenders and testers, with broader paid API and Ultra access promised but not yet dated. Independent Artificial Analysis testing scores high effort at 53, matching GPT-6 Astra, while measuring a 15% hallucination rate and much heavier output-token use. Google announces introductory $2/$10 pricing and a 1M-token maximum output.',
-    strengths: ['AA Intelligence Index 53', '#1 preliminary Arena Text ranking', '1M-token maximum output', '95% cached-input discount at launch'],
-    weaknesses: ['Not generally available', 'Input context window not yet published', 'Used about 62K output tokens per AA task', 'Introductory pricing later doubles to $4/$20'],
-    bestFor: ['Early frontier evaluation', 'Long-horizon coding research', 'Complex enterprise workflows', 'Authorized defensive cybersecurity'],
+      'Google made Argon generally available through the stable Gemini API on October 13. The official model page specifies a 1,048,576-token unified input-output window, 65,536 synchronous output by default, and long decode up to the full window. Independent Artificial Analysis testing scores high effort at 53, matching GPT-6 Astra, while measuring a 15% hallucination rate and heavy output-token use. Introductory $2/$10 pricing ends November 30.',
+    strengths: ['AA Intelligence Index 53', 'Stable Gemini API availability', '1M unified context with optional long decode', '95% cached-input discount at launch'],
+    weaknesses: ['Price doubles to $4/$20 on December 1', 'Long decode is required above the 65,536-token synchronous limit', 'Used about 62K output tokens per AA task', 'Implicit caching only'],
+    bestFor: ['Long-horizon coding', 'Complex enterprise workflows', 'Multimodal research', 'Defensive cybersecurity'],
     benchmark: { label: 'AA Intelligence Index v4.3.2', score: '53' },
-    website: 'https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/',
+    website: 'https://ai.google.dev/gemini-api/docs/models/gemini-4-argon',
     hot: true,
   },
   {
@@ -550,6 +551,28 @@ export const MODELS: AIModel[] = [
     hot: true,
   },
   {
+    id: 'muse-spark-open',
+    name: 'Muse Spark Open',
+    provider: 'Meta',
+    providerColor: '#0553c4',
+    category: ['language', 'reasoning', 'coding', 'multimodal'],
+    openWeight: true,
+    released: '2026-10',
+    context: 1048576,
+    contextLabel: '1M',
+    pricing: { input: null, output: null },
+    params: '816B MoE / 42B active',
+    license: 'Muse Model License',
+    tagline: 'A large multimodal open-weight agent model with broad runtime support',
+    description:
+      'Meta\'s downloadable agent model accepts text, images, video, and audio and returns text across a 1M-token window. BF16 and NVFP4 weights launched with support across major inference stacks and hosted providers. Meta reports strong agentic results, but its launch benchmark table is vendor-reported and independent evaluation remains limited.',
+    strengths: ['Downloadable BF16 and NVFP4 weights', '1M multimodal context', '42B active parameters', 'Day-one support across major inference stacks'],
+    weaknesses: ['Requires at least 700GB VRAM for NVFP4 or 2TB for BF16', 'Custom license requires attribution and restricts large model-as-a-service businesses', 'Independent benchmark evidence is still limited', 'Additional deployment guardrails are recommended'],
+    bestFor: ['Private multimodal agents', 'Long-horizon coding', 'Enterprise self-hosting', 'Model customization and research'],
+    website: 'https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B',
+    hot: true,
+  },
+  {
     id: 'llama-4-maverick',
     name: 'Llama 4 Maverick',
     provider: 'Meta',
@@ -730,6 +753,27 @@ export const MODELS: AIModel[] = [
     weaknesses: ['Local deployment needs a real GPU', 'Text rendering behind GPT Image 2'],
     bestFor: ['Product photography', 'Private pipelines', 'ComfyUI workflows'],
     website: 'https://bfl.ai',
+  },
+  {
+    id: 'flux-3-image-klein',
+    name: 'FLUX.3 Image Klein',
+    provider: 'Black Forest Labs',
+    providerColor: '#6d28d9',
+    category: ['image'],
+    openWeight: true,
+    released: '2026-10',
+    context: null,
+    pricing: { input: null, output: null },
+    params: '5.6B image transformer',
+    license: 'FLUX Kommunity License v1.0',
+    tagline: 'A compact open-weight generator with editing and layout control',
+    description:
+      'Black Forest Labs\' 5.6B open-weight image transformer handles text-to-image, editing, up to ten reference images, and bounding-box layout control in one model. The distilled checkpoint ships in BF16, FP8, and NVFP4 formats; Hugging Face measured roughly two-second 1024px generation on an H100. The license is not open source and limits commercial use.',
+    strengths: ['Unified generation and editing', 'Up to 10 reference images', 'Bounding-box layout controls', 'BF16, FP8, and NVFP4 weights'],
+    weaknesses: ['Commercial-output exception is limited to qualifying users under $5M annual revenue', 'Short prompts need a separate prompt upsampler', 'Edits can alter content outside the requested region', 'Quantized inference still needs about 25GB VRAM without the upsampler'],
+    bestFor: ['Self-hosted image workflows', 'Multi-reference composition', 'Layout-controlled generation', 'LoRA fine-tuning'],
+    website: 'https://huggingface.co/black-forest-labs/flux-3-image-klein',
+    hot: true,
   },
   {
     id: 'ideogram-4',

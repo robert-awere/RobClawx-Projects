@@ -6,7 +6,7 @@ A curated, searchable directory of the AI models that matter right now — front
 (Gemini 4 Argon, Claude Opus 5.5, GPT-6.1 Sol, Muse Wonder), the open-weight field (MiMo-V2.6 Pro, Kimi K3, DeepSeek V4, GLM-5.3),
 and the state of the art in image, video, and audio generation.
 
-**41 models · 19 labs · verified October 13, 2026**
+**43 models · 19 labs · verified October 16, 2026**
 
 ## Features
 
