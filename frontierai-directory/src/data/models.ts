@@ -33,7 +33,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
-export const LAST_UPDATED = '2026-10-16';
+export const LAST_UPDATED = '2026-10-20';
 
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
@@ -349,25 +349,26 @@ export const MODELS: AIModel[] = [
 
   // ── DeepSeek ────────────────────────────────────────────
   {
-    id: 'deepseek-v4-1-flash',
-    name: 'DeepSeek V4.1 Flash',
+    id: 'deepseek-v4-1-flash-1017',
+    name: 'DeepSeek V4.1 Flash 1017',
     provider: 'DeepSeek',
     providerColor: '#3d55e0',
     category: ['language', 'reasoning', 'coding', 'multimodal'],
     openWeight: true,
-    released: '2026-09',
+    released: '2026-10',
     context: 1048576,
     contextLabel: '1M',
     pricing: { input: 0.3, output: 1.2 },
     params: '552B MoE / 8B prefill, 16B decode',
     license: 'MIT',
-    tagline: 'Multimodal frontier agents at Flash economics',
+    tagline: 'A faster, stronger Flash checkpoint at the same low price',
     description:
-      'DeepSeek\'s new open-weight multimodal model pairs a 552B MoE backbone with 1M context, up to 384K output, and continuously adjustable reasoning effort. Peak API pricing is $0.30/$1.20, with off-peak rates halved. DeepSeek reports strong agentic results and plans to route V4 Pro traffic to this cheaper model from September 14; independent Arena evidence is promising but preliminary.',
-    strengths: ['MIT-licensed weights', '1M context and 384K max output', 'Native image and text input', 'Low $0.30/$1.20 peak price'],
-    weaknesses: ['552B weights require substantial infrastructure', 'No Jinja-format chat template', 'Independent benchmark evidence remains preliminary', 'Variable time-of-day API pricing'],
-    bestFor: ['Cost-sensitive coding agents', 'Multimodal document workflows', 'Long-context self-hosting', 'High-volume tool use'],
-    website: 'https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash',
+      'DeepSeek\'s October 17 checkpoint keeps the 552B MoE architecture, MIT weights, 1M context, and $0.30/$1.20 peak pricing. Independent Artificial Analysis testing scores max effort at 45, up from 39 for the September checkpoint, and measures about 225 output tokens per second. DeepSeek reports shorter task execution and output than its predecessor, but the independent evaluation still classifies the model as very verbose.',
+    strengths: ['AA Intelligence Index 45', 'About 225 output tokens per second in independent testing', 'MIT-licensed weights', '1M multimodal context'],
+    weaknesses: ['Very verbose in independent testing', '552B weights require substantial infrastructure', 'No Jinja-format chat template', 'Variable time-of-day API pricing'],
+    bestFor: ['Cost-sensitive coding agents', 'High-volume tool use', 'Multimodal document workflows', 'Long-context self-hosting'],
+    benchmark: { label: 'AA Intelligence Index v4.3.2', score: '45' },
+    website: 'https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017',
     hot: true,
   },
   {
@@ -595,23 +596,24 @@ export const MODELS: AIModel[] = [
 
   // ── MiniMax / Xiaomi / Mistral ──────────────────────────
   {
-    id: 'minimax-m2-7',
-    name: 'MiniMax M2.7',
+    id: 'minimax-m3-1-flash',
+    name: 'MiniMax M3.1 Flash',
     provider: 'MiniMax',
     providerColor: '#c22a42',
-    category: ['language', 'coding'],
-    openWeight: true,
-    released: '2026-05',
-    context: 200000,
-    pricing: { input: 0.3, output: 1.2 },
-    license: 'MIT',
-    tagline: 'An efficient MoE built for agents',
+    category: ['language', 'reasoning', 'coding', 'multimodal'],
+    openWeight: false,
+    released: '2026-10',
+    context: 1000000,
+    pricing: { input: 0.15, output: 0.6 },
+    tagline: 'A low-cost multimodal agent model with a 1M window',
     description:
-      'An open-weight model optimized for agentic workflows and coding; interleaved-thinking design keeps multi-turn tool calling stable. At $0.30/$1.20 it remains one of the cheapest credible agent backbones.',
-    strengths: ['Purpose-built for agents', 'Very low price', 'MIT license'],
-    weaknesses: ['Average breadth of general knowledge', '200K context'],
-    bestFor: ['Agent applications', 'Workflow automation', 'Budget coding'],
-    website: 'https://www.minimax.io',
+      'MiniMax\'s October 19 replacement for M2.7 combines text, image, and video input with a 1M context window and five reasoning-effort levels. Independent Artificial Analysis testing scores it at 43 and $0.22 per evaluated task. Official flat pricing is $0.15/$0.60 with $0.015 cache reads. MiniMax says weights will follow, so the currently available API model remains proprietary.',
+    strengths: ['AA Intelligence Index 43', '$0.15/$0.60 flat token pricing', '1M multimodal context', 'Five reasoning-effort levels'],
+    weaknesses: ['Weights are not yet downloadable', 'Very verbose in independent testing', 'Thinking cannot be disabled', 'Launch benchmark gains are vendor-reported'],
+    bestFor: ['Budget coding agents', 'High-volume workflow automation', 'Long-context multimodal analysis', 'Tool-using subagents'],
+    benchmark: { label: 'AA Intelligence Index v4.3.2', score: '43' },
+    website: 'https://www.minimax.io/blog/minimax-m31f',
+    hot: true,
   },
   {
     id: 'mimo-v2-6-pro',
