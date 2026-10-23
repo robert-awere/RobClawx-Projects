@@ -652,5 +652,68 @@
         "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
       }
     ]
+  },
+  {
+    "slug": "gpt-6-luna-decisions-api-when-to-use-it",
+    "title": "GPT-6 Luna Decisions API: when should you use it?",
+    "description": "OpenAI's bounded-decision endpoint is now generally available. Here is where it beats a full model response—and where it does not.",
+    "published": "2026-10-23",
+    "models": [
+      "GPT-6 Luna"
+    ],
+    "sections": [
+      {
+        "heading": "The Decisions API is a narrower GPT-6 Luna product, not a faster Responses API",
+        "paragraphs": [
+          "OpenAI made the GPT-6 Luna-powered Decisions API generally available on October 22 after a short public beta. The endpoint accepts text, images, structured JSON, conversation history, and tool-call results, then answers questions whose possible outcomes are defined in advance. It can return the probability that a condition is true, choose one item from a supplied list, or calculate a score across ordered rubric levels. OpenAI says this focused path can respond up to ten times faster than sending Luna through the Responses API. That speed claim is vendor-reported, and actual latency will depend on request size, region, load, and network path.",
+          "The important word is bounded. A support router can ask whether a ticket concerns billing, account access, or a technical fault. A product workflow can estimate the probability that an uploaded photograph shows damage. An agent can choose whether to continue, retry, ask for clarification, or escalate. In each case, the application already knows the permitted outcomes. The API is not meant to research an answer, write an explanation, extract an arbitrary object, or invent a tool call. OpenAI explicitly directs those jobs to Structured Outputs or function calling in the Responses API.",
+          "That distinction makes the new endpoint useful without making it a general GPT-6 Luna upgrade. Standard Luna still costs $0.10 per million input tokens and $0.50 per million output tokens and remains the catalog's inexpensive route for generation, tool use, and multi-step work. Decisions charges the same $0.10 input rate, offers $0.01 cached reads under standard Luna caching terms, and charges nothing for output tokens. The saving matters only when a typed decision is the required product. Replacing a useful explanation with a bare probability is not optimization; it is a different—and often worse—user experience."
+        ]
+      },
+      {
+        "heading": "Use it for high-volume gates where probabilities drive explicit policy",
+        "paragraphs": [
+          "The clearest use cases sit in an application's hot path: intent classification, queue routing, moderation gates, risk triage, lead scoring, document categorization, and selecting the next state in a constrained workflow. Decisions can evaluate as many as 400 questions in one request, twice the public-beta limit. Shared evidence can be cached while questions change, and each question can include its own comparison images. Native JSON input also removes the need to flatten an order record, event payload, or policy object into prose before classification.",
+          "Probabilities are the feature, not decorative metadata. A team can accept a high-confidence route automatically, send an uncertain result to a stronger model, and reserve human review for cases where the cost of a wrong decision is high. Thresholds should come from labeled examples drawn from production rather than a universal confidence number. A fraud gate that misses a true positive and a marketing classifier that mislabels a topic have different costs, so they should not share an escalation threshold merely because both return values between zero and one.",
+          "General availability also improves the operational case. OpenAI documents prompt caching, organization usage reporting, Private Link, eligible Zero Data Retention and HIPAA use, data residency across supported API regions, and regional processing in the United States and Europe. Those controls do not remove the need to review retention, residency, and access requirements for a specific workload. Regional processing premiums and long-context multipliers still apply, while files, audio, and item references are not accepted directly. The dedicated endpoint currently supports only the gpt-6-luna model, so it is not a model-neutral decision interface."
+        ]
+      },
+      {
+        "heading": "Independent evidence favors specialist decision models on speed, not universal capability",
+        "paragraphs": [
+          "Artificial Analysis launched its Decision Index before the endpoint reached general availability, offering a useful independent frame for the category. The index combines knowledge and hallucination questions, multiple-choice reasoning, tool-call selection, and safety classification. Its launch results found that specialist decision models answered in roughly 0.06 to 0.5 seconds per task and cost between $17 and $199 per million benchmark tasks. Those figures describe the evaluator's task mix and contemporary provider rates, not a quote for an individual production pipeline.",
+          "The category-level result is more important than one ranking. Full language models led on knowledge and difficult reasoning, while leading decision models were competitive on classification and tool-call selection. Artificial Analysis found that GPT-6 Luna at low reasoning scored 55 on the launch Decision Index and took 1.5 seconds per task, while the leading specialist at launch scored 58 and took 0.13 seconds. That comparison used Luna as a language model with structured output, not the dedicated Decisions route now entering general availability, so it should not be presented as a benchmark of the final GA endpoint.",
+          "Calibration is another caution. Artificial Analysis found decision models generally overconfident on knowledge and reasoning tasks, although calibration was better on classification and tool selection—the jobs they are designed to perform. A returned probability is therefore not automatically a trustworthy probability. Teams should compare predicted confidence with observed accuracy on their own data, monitor drift, and keep an abstain or escalation path. OpenAI's customer examples and up-to-ten-times speed claim are useful vendor evidence, but they cannot replace an owned test set or an independent evaluation of the GA configuration."
+        ]
+      },
+      {
+        "heading": "A small routing test is enough to decide whether the endpoint belongs in production",
+        "paragraphs": [
+          "Start with one recurring bounded decision, not a platform-wide migration. Collect representative historical cases, including ambiguous inputs and expensive failures, and define the allowed answers before testing. Compare the Decisions endpoint with the current rule, classifier, or Luna Responses route. Measure class-level precision and recall, calibration, p50 and p95 latency, cache behavior, cost per thousand decisions, abstentions, and the downstream cost of false positives and false negatives. If images or long shared context matter, include them rather than benchmarking short text and extrapolating.",
+          "Keep the production policy simple. Auto-accept results above a tested threshold, escalate the uncertain band, and reject or review malformed inputs. Log the model, question version, answer probabilities, threshold applied, latency, and final outcome without retaining sensitive content longer than policy permits. Re-evaluate whenever labels, traffic mix, model behavior, or business costs change. Asking 400 questions in one request can reduce overhead, but it can also create a large failure domain; batch only decisions that can safely succeed or retry together.",
+          "The buying rule is deliberately narrow. Use GPT-6 Luna Decisions when the answer set is known, a typed probability or choice is sufficient, and latency or volume materially affects the product. Use standard Luna or another language model when the task needs explanation, extraction into a custom schema, tools, outside knowledge, or multi-step reasoning. Keep a stronger model or a person behind the uncertain cases. General availability makes Decisions a credible production primitive, but its value comes from refusing work it was not designed to do."
+        ],
+        "bullets": [
+          "Best fit: routing, classification, scoring, moderation, and next-action gates with fixed outcomes.",
+          "Not a fit: explanations, arbitrary structured extraction, tool argument generation, research, or open-ended reasoning.",
+          "Vendor-reported: up to 10x faster than Luna through Responses; verify latency on your own request shape and region.",
+          "Independently supported: specialist decision models trade knowledge and reasoning depth for much lower latency on bounded tasks."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "OpenAI: Build more responsive apps with the Decisions API",
+        "url": "https://openai.com/index/decisions-api/"
+      },
+      {
+        "label": "OpenAI API: Decisions guide, limits, pricing, and availability",
+        "url": "https://developers.openai.com/api/docs/guides/decisions"
+      },
+      {
+        "label": "Artificial Analysis: Decision Index v1.0",
+        "url": "https://artificialanalysis.ai/articles/artificial-analysis-decision-index"
+      }
+    ]
   }
 ]

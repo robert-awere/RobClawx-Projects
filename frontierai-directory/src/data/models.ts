@@ -33,7 +33,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
-export const LAST_UPDATED = '2026-10-20';
+export const LAST_UPDATED = '2026-10-23';
 
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
@@ -171,10 +171,10 @@ export const MODELS: AIModel[] = [
     pricing: { input: 0.1, output: 0.5 },
     tagline: 'Capable agents at commodity inference prices',
     description:
-      'OpenAI\'s new volume tier cuts GPT-5.6 Luna\'s rates to $0.10/$0.50 while retaining 1.05M context and tool-using workflows. Independent Artificial Analysis testing scores max effort at 37 and measures about $0.07 per Intelligence Index task, though its Coding Agent Index slipped two points and knowledge-work deliverables sometimes omitted requirements.',
-    strengths: ['AA Intelligence Index 37 at $0.10/$0.50', 'Tool use and multi-step workflows', '1.05M context', '90% cached-input discount'],
-    weaknesses: ['Not the ceiling for the hardest tasks', 'Coding-agent score regressed versus GPT-5.6 Luna', 'Long-context requests use a higher price tier', 'Can omit knowledge-work rubric elements'],
-    bestFor: ['High-volume agent workloads', 'Cost-sensitive production', 'Batch engineering tasks'],
+      'OpenAI\'s volume tier costs $0.10/$0.50 while retaining 1.05M context and tool-using workflows. Its dedicated Decisions API is now generally available for bounded probability, choice, and score outputs at $0.10 per million input tokens with no output-token charge. OpenAI reports up to 10x lower latency than its Responses API; independent Artificial Analysis testing scores the full max-effort model at 37.',
+    strengths: ['AA Intelligence Index 37 at $0.10/$0.50', 'GA Decisions API for bounded choices', '1.05M context', '90% cached-input discount'],
+    weaknesses: ['Not the ceiling for the hardest tasks', 'Decisions cannot generate explanations or arbitrary schemas', 'Long-context requests use a higher price tier', 'Can omit knowledge-work rubric elements'],
+    bestFor: ['Routing and bounded decisions', 'High-volume agent workloads', 'Cost-sensitive production'],
     benchmark: { label: 'AA Intelligence Index v4.3.2', score: '37' },
     website: 'https://developers.openai.com/api/docs/models/gpt-6-luna',
     hot: true,
@@ -778,6 +778,28 @@ export const MODELS: AIModel[] = [
     hot: true,
   },
   {
+    id: 'fibo-2',
+    name: 'Fibo 2.0',
+    provider: 'Bria',
+    providerColor: '#0e7490',
+    category: ['image'],
+    openWeight: true,
+    released: '2026-10',
+    context: null,
+    pricing: { input: null, output: null },
+    params: '8B image transformer',
+    license: 'CC BY-NC 4.0',
+    tagline: 'The open-weight editing leader, with licensed training data',
+    description:
+      'Bria\'s unified 8B model handles text-to-image generation, masked editing, and up to four reference images. Independent Artificial Analysis testing ranks it first among open-weight editors at 1089 Elo and in the statistically tied top open-weight text-to-image group at 1039. The weights are free only for non-commercial use; Bria charges separately for commercial rights.',
+    strengths: ['#1 open-weight AA image-editing Elo', 'Unified generation and editing', 'Structured prompt and layout control', 'Trained on licensed data'],
+    weaknesses: ['CC BY-NC weights require a commercial agreement for business use', 'Full-quality generation uses 50 steps', 'Prompt expansion depends on a separate VLM', 'Multi-turn editing is not yet released'],
+    bestFor: ['Self-hosted image editing', 'Brand and product workflows', 'LoRA fine-tuning', 'Structured visual control'],
+    benchmark: { label: 'AA Image Editing v2.1 Elo', score: '1089 (#1 open)' },
+    website: 'https://huggingface.co/briaai/Fibo-2.0-dev',
+    hot: true,
+  },
+  {
     id: 'ideogram-4',
     name: 'Ideogram 4',
     provider: 'Ideogram',
@@ -872,6 +894,28 @@ export const MODELS: AIModel[] = [
     weaknesses: ['Costs accumulate on long audio'],
     bestFor: ['Audiobooks', 'Dubbing', 'Voice assistants'],
     website: 'https://elevenlabs.io',
+  },
+  {
+    id: 'voxtral-3',
+    name: 'Voxtral 3',
+    provider: 'Mistral AI',
+    providerColor: '#e05e00',
+    category: ['audio'],
+    openWeight: false,
+    released: '2026-10',
+    context: 32000,
+    pricing: { input: null, output: null },
+    params: '4B Mini; Small undisclosed',
+    license: 'Proprietary',
+    tagline: 'A modular multilingual voice stack for private deployment',
+    description:
+      'Mistral\'s public-preview family combines batch and realtime transcription, diarization, context biasing, text-to-speech, voice adaptation, and a LiveKit agent SDK. API rates start at $0.0035 per transcription minute and $13 per million TTS characters. Independent Artificial Analysis Speech Arena testing gives Voxtral 3 TTS 1218 Elo; Mistral\'s broader accuracy claims remain vendor-run.',
+    strengths: ['50+ transcription languages', 'Realtime transcription below 500ms', 'Context-aware TTS and voice adaptation', 'EU API and private-deployment options'],
+    weaknesses: ['Public preview', 'On-premises deployment requires a commercial arrangement', 'The agent stack uses separate speech and reasoning models', 'Many launch comparisons are vendor-run'],
+    bestFor: ['Multilingual contact centers', 'Private voice agents', 'Transcription with diarization', 'Expressive speech generation'],
+    benchmark: { label: 'AA TTS Speech Arena Elo', score: '1218' },
+    website: 'https://mistral.ai/news/voxtral-3',
+    hot: true,
   },
   {
     id: 'gemini-3-8-flash-tts',
