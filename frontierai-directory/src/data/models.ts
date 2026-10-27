@@ -33,7 +33,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
-export const LAST_UPDATED = '2026-10-23';
+export const LAST_UPDATED = '2026-10-27';
 
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
@@ -137,6 +137,26 @@ export const MODELS: AIModel[] = [
     bestFor: ['High-value coding agents', 'Computer-use automation', 'Complex end-to-end engineering', 'Professional artifact creation'],
     benchmark: { label: 'AA Coding Agent Index', score: '67' },
     website: 'https://openai.com/index/gpt-6-astra/',
+    hot: true,
+  },
+  {
+    id: 'gpt-6-1-terra',
+    name: 'GPT-6.1 Terra',
+    provider: 'OpenAI',
+    providerColor: '#0d8a6a',
+    category: ['language', 'reasoning', 'coding', 'multimodal'],
+    openWeight: false,
+    released: '2026-10',
+    context: 1050000,
+    pricing: { input: 1, output: 5 },
+    tagline: 'The new cost-efficiency frontier for visual and computer-use agents',
+    description:
+      'OpenAI\'s October workhorse halves GPT-5.6 Terra\'s input rate and cuts output from $12 to $5 while retaining 1.05M context, image input, and computer use. Independent Artificial Analysis testing scores max effort at 48, four points below GPT-6.1 Sol, for $0.40 per evaluated task. Low and medium effort define its strongest cost-efficiency case.',
+    strengths: ['AA Intelligence Index 48 at max effort', '$1/$5 standard pricing', '1.05M context and 128K max output', 'Strong visual reasoning and computer use'],
+    weaknesses: ['Trails GPT-6.1 Sol on difficult coding and general intelligence', 'Long-context rates rise above 272K input tokens', 'Tool calling requires the Responses API', 'OpenAI classifies cyber capability as Critical and applies additional safeguards'],
+    bestFor: ['High-volume computer use', 'Visual document workflows', 'Production coding agents', 'Professional writing and revision'],
+    benchmark: { label: 'AA Intelligence Index v4.3.2', score: '48' },
+    website: 'https://developers.openai.com/api/docs/models/gpt-6.1-terra',
     hot: true,
   },
   {
@@ -304,6 +324,28 @@ export const MODELS: AIModel[] = [
 
   // ── Moonshot ────────────────────────────────────────────
   {
+    id: 'kimi-k3-1-pro',
+    name: 'Kimi K3.1 Pro',
+    provider: 'Moonshot AI',
+    providerColor: '#52525b',
+    category: ['language', 'reasoning', 'coding', 'multimodal'],
+    openWeight: false,
+    released: '2026-10',
+    context: 1048576,
+    contextLabel: '1M',
+    pricing: { input: 2, output: 10 },
+    params: '2.8T MoE / 104B active',
+    tagline: 'A top-tier agent model whose promised open weights are still pending',
+    description:
+      'Moonshot\'s heavily post-trained K3 successor reaches 55 on the independent Artificial Analysis Intelligence Index and leads Terminal-Bench 4.0 at 67% in that evaluation. Its $2/$10 API rate is one third below K3. Moonshot promises full weights by November 4; until they are actually published with a license, this catalog treats K3.1 Pro as proprietary.',
+    strengths: ['AA Intelligence Index 55', '67% on independent Terminal-Bench 4.0', '1M text-and-image context', '33% lower API rates than K3'],
+    weaknesses: ['Weights and license are not yet published', 'Used about 55K output tokens per AA task', 'Thinking cannot be disabled', 'Official web search is not recommended for production yet'],
+    bestFor: ['Long-horizon coding agents', 'Professional knowledge work', '3D and CAD workflows', 'Financial research with verification'],
+    benchmark: { label: 'AA Intelligence Index v4.3.2', score: '55 (#4)' },
+    website: 'https://platform.moonshot.ai/docs/guide/kimi-k3-1-pro-quickstart',
+    hot: true,
+  },
+  {
     id: 'kimi-k3',
     name: 'Kimi K3',
     provider: 'Moonshot AI',
@@ -316,13 +358,13 @@ export const MODELS: AIModel[] = [
     pricing: { input: 3, output: 15 },
     params: '2.8T MoE',
     license: 'Kimi K3 License',
-    tagline: 'The largest open-weight model ever',
+    tagline: 'The downloadable K3 baseline, now superseded on the API',
     description:
-      'Moonshot\'s 2.8-trillion-parameter flagship remains one of the largest open-weight releases. The full MXFP4 weights are now downloadable, with 104B active parameters, native vision, and a 1M context window. Its custom Kimi K3 License permits deployment but is not the standard MIT license previously expected; review its terms before commercial use.',
-    strengths: ['Top-tier open-weight intelligence', '1M context with native vision', 'Full weights now available', 'Strong long-horizon coding'],
-    weaknesses: ['Custom license rather than MIT', 'Enormous self-hosting footprint', 'Pricy API at $3/$15', 'Verbose at maximum reasoning'],
+      'Moonshot\'s 2.8-trillion-parameter K3 remains downloadable with 104B active parameters, native vision, and a 1M context window. K3.1 Pro now provides much stronger agent performance and a cheaper API, but its weights are still pending. K3 therefore remains the self-hostable option under the custom Kimi K3 License rather than the performance leader.',
+    strengths: ['Downloadable 2.8T MoE weights', '1M context with native vision', 'Strong long-horizon coding', 'Available now for self-hosting'],
+    weaknesses: ['K3.1 Pro is materially stronger and cheaper by API', 'Custom license rather than MIT', 'Enormous self-hosting footprint', 'Verbose at maximum reasoning'],
     bestFor: ['Frontier agentic coding', 'Long-horizon engineering sessions', 'Repo-scale migrations', 'Large-scale self-hosted inference'],
-    benchmark: { label: 'AA Intelligence Index', score: '57.1 (#3)' },
+    benchmark: { label: 'AA Intelligence Index v4.3.2', score: '44' },
     website: 'https://huggingface.co/moonshotai/Kimi-K3',
     hot: true,
   },
