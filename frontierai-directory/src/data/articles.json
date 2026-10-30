@@ -797,5 +797,79 @@
         "url": "https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks"
       }
     ]
+  },
+  {
+    "slug": "gemini-4-carbon-vs-opus-5-5-gpt-6-astra",
+    "title": "Gemini 4 Carbon vs Opus 5.5 and GPT-6 Astra: wait or switch?",
+    "description": "Carbon leads the new independent intelligence index, but restricted access and heavy token use make Argon, Opus, and Astra the practical controls.",
+    "published": "2026-10-30",
+    "models": [
+      "Gemini 4 Carbon",
+      "Gemini 4 Argon",
+      "Claude Opus 5.5",
+      "GPT-6 Astra"
+    ],
+    "sections": [
+      {
+        "heading": "Carbon is the new measured leader, not yet a production default",
+        "paragraphs": [
+          "Google announced Gemini 4 Carbon on October 28, only two weeks after making Gemini 4 Argon broadly available. Carbon is a genuine frontier upgrade rather than a renamed endpoint. Artificial Analysis scores its high-reasoning configuration at 59 on Intelligence Index v5, first among the models tested under the new benchmark mix. It also scores 59 on the evaluator's Coding Agent Index, three points behind Claude Opus 5.5 at maximum effort. Those independent results make Carbon a serious future buying candidate.",
+          "Availability prevents an immediate migration. Google is initially giving access to selected cyber defenders and trusted partners through its Fairwind Program while it gathers feedback and refines safeguards. The company says developer, business, and consumer access will follow, but it has not published a date or a general API model identifier. Artificial Analysis likewise notes that Carbon is not publicly available. A model that a small evaluation cohort can test is not yet interchangeable with Opus, Astra, or Argon in a production architecture.",
+          "The price also needs a date attached. Google announces introductory rates of $2 per million input tokens, $10 per million output tokens, and a 95% cached-input discount. Standard pricing will be $4/$20, but Google has not named the introductory period's end. Artificial Analysis therefore uses the standard rate in its cost comparisons. Procurement models should do the same until the discount deadline and general-access terms are documented."
+        ]
+      },
+      {
+        "heading": "Independent results show a broad leap with expensive verbosity",
+        "paragraphs": [
+          "Carbon leads four of the nine components in Artificial Analysis Intelligence Index v5: HLE-Diamond, Terminal-Bench-Science, AA-Omniscience, and AutomationBench-AA. Its 59-point composite result is nine points above Argon under the evaluator's current methodology. On coding agents, Carbon reaches 64% on Terminal-Bench 4.0 and 51% on FrontierCode v1.1, placing second to Opus 5.5 in both. This is stronger evidence than a vendor launch table because one evaluator ran the compared models through a common framework.",
+          "It is not a clean sweep. Carbon's 1,609 Elo on AA-Briefcase improves sharply over Argon, but still trails Kimi K3.1 Pro, Muse Wonder, and Grok 4.7 on that agentic knowledge-work evaluation. Artificial Analysis also measured about 123,000 output tokens per Intelligence Index task. At standard $4/$20 pricing, the resulting $7.76 average task cost is about 23% below Opus 5.5's $10.04 but above GPT-6 Astra's $6.25. Carbon's higher index score is therefore a capability result, not proof of the lowest total cost.",
+          "Arena supplies a different and useful signal. Carbon is preliminary number one in the Text Arena and number two in Agent Arena, behind Opus 5.5. Its Agent Arena result is based on real sessions and includes confirmed success, steerability, bash reliability, and tool hallucination signals. The early standing supports Carbon's broad promise, but the preliminary label and shorter collection window matter. Blind preference and agent-session outcomes should complement, not replace, task-specific acceptance tests."
+        ]
+      },
+      {
+        "heading": "Opus, Astra, and Argon remain the controls a buyer can deploy",
+        "paragraphs": [
+          "Claude Opus 5.5 remains the strongest available control for difficult coding and judgment-heavy knowledge work. It leads the current Artificial Analysis Coding Agent Index and the Agent Arena overall. Its $4/$20 token rate matches Carbon's standard price, making the eventual comparison unusually direct. Carbon uses fewer output tokens in the independent Intelligence Index run, while Opus leads coding agents and real-session agent outcomes. The winner will depend on whether a workload rewards scientific reasoning, terminal execution, polished deliverables, or consistent completion under tools.",
+          "GPT-6 Astra is the cost and engineering control at the premium end. Artificial Analysis places Carbon above Astra on the new general index, but Astra's measured $6.25 cost per Intelligence Index task is lower than Carbon's standard-price $7.76. Astra is already integrated into OpenAI's public API and has a mature migration path for teams using the Responses API. Carbon may justify switching on workloads where its higher reasoning result prevents retries; it does not justify switching merely because 59 is larger than another composite score.",
+          "Gemini 4 Argon is the practical Google choice today. It is generally available through the stable Gemini API, has documented 1M unified context behavior, and currently uses the same $2/$10 introductory rate. Carbon's independent gains make Argon a likely future predecessor, but Argon can be evaluated, integrated, and monitored now. Teams that need Google infrastructure should keep Argon in production and reserve a clean challenger slot for Carbon rather than designing around an unavailable model."
+        ]
+      },
+      {
+        "heading": "Wait for access, then run a narrow four-way evaluation",
+        "paragraphs": [
+          "The smallest useful plan is to do nothing operational until Carbon receives documented general API access. Collect twenty to fifty completed tasks in the meantime, including difficult repository changes, scientific analysis, long multimodal inputs, tool failures, and professional deliverables that previously needed correction. Preserve the prompts, tools, acceptance checks, reviewer decisions, latency, token classes, retries, and billed cost so the same work can be replayed when Carbon becomes available.",
+          "Run Carbon high against the current production route, not against every frontier model. Use Opus 5.5 when judgment and polished knowledge work dominate, Astra for premium engineering agents, or Argon for an existing Gemini deployment. Compare accepted completion and reviewer time before benchmark scores. Test cache-heavy and long-context cases explicitly, because a 95% cache discount and a one-million-token window matter only when the application can reuse context without crossing operational limits or encouraging wasteful prompts.",
+          "Google reports state-of-the-art cybersecurity scores, more secure code, fewer unsupported claims, and better resistance to prompt injection. Those are vendor-reported launch results, even when the named benchmarks are public. Artificial Analysis's intelligence, coding, token-use, and task-cost findings are independent but still harness-specific; Arena's standings are independent but preliminary. The buying rule is therefore restrained: watch Carbon, keep a test slot ready, and switch only after public access and owned-task evidence turn an impressive model launch into a repeatable production advantage."
+        ],
+        "bullets": [
+          "Wait: Carbon has no general API access or published rollout date.",
+          "Available Google route: Gemini 4 Argon at the same announced introductory token rate.",
+          "Capability control: Claude Opus 5.5; premium engineering control: GPT-6 Astra.",
+          "Vendor-reported: Google's cyber, safety, and internal coding gains; independently measured: Artificial Analysis and Arena results."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Google: Introducing Gemini 4 Carbon",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+      },
+      {
+        "label": "Artificial Analysis: Gemini 4 Carbon independent evaluation",
+        "url": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1"
+      },
+      {
+        "label": "Arena: Agent leaderboard",
+        "url": "https://arena.ai/leaderboard/agent"
+      },
+      {
+        "label": "Arena: Text leaderboard",
+        "url": "https://arena.ai/leaderboard/chat/text"
+      },
+      {
+        "label": "Google: Gemini 4 Argon developer availability",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-argon/"
+      }
+    ]
   }
 ]

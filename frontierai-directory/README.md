@@ -3,10 +3,10 @@
 **[frontierai.directory](https://frontierai.directory)**
 
 A curated, searchable directory of the AI models that matter right now — frontier closed systems
-(Gemini 4 Argon, Claude Opus 5.5, GPT-6.1 Sol, GPT-6.1 Terra, Muse Wonder), the open-weight field (MiMo-V2.6 Pro, Kimi K3, DeepSeek V4, GLM-5.3),
+(Gemini 4 Carbon, Claude Opus 5.5, GPT-6.1 Sol, GPT-6.1 Terra, Muse Wonder), the open-weight field (MiMo-V2.6 Pro, Mistral Large 4, Kimi K3, DeepSeek V4, GLM-5.3),
 and the state of the art in image, video, and audio generation.
 
-**48 models · 20 labs · verified October 27, 2026**
+**48 models · 20 labs · verified October 30, 2026**
 
 ## Features
 

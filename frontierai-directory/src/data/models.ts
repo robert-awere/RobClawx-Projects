@@ -33,7 +33,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
-export const LAST_UPDATED = '2026-10-27';
+export const LAST_UPDATED = '2026-10-30';
 
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
@@ -219,6 +219,27 @@ export const MODELS: AIModel[] = [
   },
 
   // ── Google ──────────────────────────────────────────────
+  {
+    id: 'gemini-4-carbon',
+    name: 'Gemini 4 Carbon',
+    provider: 'Google DeepMind',
+    providerColor: '#2f6bd8',
+    category: ['language', 'reasoning', 'coding', 'multimodal'],
+    openWeight: false,
+    released: '2026-10',
+    context: 1000000,
+    contextLabel: '1M',
+    pricing: { input: 2, output: 10 },
+    tagline: 'The new intelligence leader, still limited to trusted testers',
+    description:
+      'Google\'s October 28 frontier model leads the independent Artificial Analysis Intelligence Index v5 at 59 and ranks second on its Coding Agent Index. It accepts text, image, audio, and video across a 1M context window. The $2/$10 rate is introductory; standard pricing is $4/$20. Carbon is not yet generally available, so Argon remains Google\'s deployable frontier model.',
+    strengths: ['#1 AA Intelligence Index v5', '#2 AA Coding Agent Index', '1M multimodal context', '#2 preliminary Agent Arena result'],
+    weaknesses: ['Not publicly available', 'Introductory-price end date is unspecified', 'Very verbose in independent testing', 'Google cyber and alignment comparisons are largely vendor-run'],
+    bestFor: ['Future long-horizon coding pilots', 'Defensive cybersecurity evaluation', 'Complex scientific reasoning', 'Multimodal agent workflows'],
+    benchmark: { label: 'AA Intelligence Index v5', score: '59 (#1)' },
+    website: 'https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/',
+    hot: true,
+  },
   {
     id: 'gemini-4-argon',
     name: 'Gemini 4 Argon',
@@ -681,24 +702,25 @@ export const MODELS: AIModel[] = [
   },
   {
     id: 'mistral-large-4-preview',
-    name: 'Mistral Large 4 Preview',
+    name: 'Mistral Large 4',
     provider: 'Mistral AI',
     providerColor: '#e05e00',
     category: ['language', 'reasoning', 'coding', 'multimodal'],
-    openWeight: false,
+    openWeight: true,
     released: '2026-10',
-    context: 524288,
-    contextLabel: '512K API',
-    pricing: { input: 1.36, output: 4.18 },
+    context: 1000000,
+    contextLabel: '1M',
+    pricing: { input: 0.7, output: 2.1 },
     params: '1.05T MoE / 52B active',
-    tagline: 'Europe\'s strongest model, with open weights still pending',
+    license: 'Mistral Ecosystem Open-Weight License v26.10',
+    tagline: 'Europe\'s trillion-parameter multimodal model is now downloadable',
     description:
-      'Mistral\'s public-preview flagship is a natively multimodal 1.05T MoE with 52B active parameters. Independent Artificial Analysis testing scores it 38, comparable to GPT-6 Luna, and 50 on the Cyber Index. Mistral advertises 1M model context and promises weights by the end of October; the tested preview endpoint exposes 512K, and the weights are not yet downloadable.',
-    strengths: ['AA Intelligence Index 38', 'AA Cyber Index 50', 'Native text and image input', 'European training and serving infrastructure'],
-    weaknesses: ['Weights and license are not yet available', 'Public preview rather than stable release', 'Very verbose in independent testing', 'Standard task cost trails similarly capable open-weight rivals'],
-    bestFor: ['European sovereign-AI evaluation', 'Multilingual enterprise work', 'Cybersecurity evaluation', 'Multimodal document workflows'],
+      'Mistral released FP8 and NVFP4 weights on October 29 for its natively multimodal 1.05T MoE, alongside 1M context and a lower $0.70/$2.10 API rate. The custom MIT-derived license permits commercial use but requires a separate Mistral license for model-as-a-service businesses. Independent Artificial Analysis testing scores general intelligence at 38; cybersecurity is the stronger specialist case.',
+    strengths: ['Downloadable FP8 and NVFP4 weights', '1M text-and-image context', 'Strong independent cybersecurity results', 'European training and serving infrastructure'],
+    weaknesses: ['Custom license restricts model-as-a-service use', 'Public-preview API', 'Very large self-hosting footprint', 'General intelligence trails open-weight leaders'],
+    bestFor: ['European sovereign AI', 'Private cybersecurity workflows', 'Multilingual enterprise work', 'Multimodal self-hosting'],
     benchmark: { label: 'AA Intelligence Index', score: '38' },
-    website: 'https://mistral.ai/news/mistral-large-4/',
+    website: 'https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B',
     hot: true,
   },
   {
