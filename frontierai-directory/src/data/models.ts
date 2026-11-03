@@ -33,7 +33,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
-export const LAST_UPDATED = '2026-10-30';
+export const LAST_UPDATED = '2026-11-03';
 
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
@@ -713,13 +713,13 @@ export const MODELS: AIModel[] = [
     pricing: { input: 0.7, output: 2.1 },
     params: '1.05T MoE / 52B active',
     license: 'Mistral Ecosystem Open-Weight License v26.10',
-    tagline: 'Europe\'s trillion-parameter multimodal model is now downloadable',
+    tagline: 'Europe\'s open-weight coding and cyber specialist',
     description:
-      'Mistral released FP8 and NVFP4 weights on October 29 for its natively multimodal 1.05T MoE, alongside 1M context and a lower $0.70/$2.10 API rate. The custom MIT-derived license permits commercial use but requires a separate Mistral license for model-as-a-service businesses. Independent Artificial Analysis testing scores general intelligence at 38; cybersecurity is the stronger specialist case.',
-    strengths: ['Downloadable FP8 and NVFP4 weights', '1M text-and-image context', 'Strong independent cybersecurity results', 'European training and serving infrastructure'],
-    weaknesses: ['Custom license restricts model-as-a-service use', 'Public-preview API', 'Very large self-hosting footprint', 'General intelligence trails open-weight leaders'],
+      'Mistral\'s final open-weight checkpoint replaces the October preview with stronger coding and defensive cybersecurity performance, three reasoning levels, a 1M context window, and $0.70/$2.10 API pricing. Independent Artificial Analysis testing scores high effort at 26 on Intelligence Index v5 and 48 on its Coding Agent Index, effectively tying the open-weight coding leader while using fewer tokens. The custom MIT-derived license still requires a separate license for model-as-a-service businesses.',
+    strengths: ['AA Coding Agent Index 48', 'Downloadable FP8 and NVFP4 weights', '1M text-and-image context', 'Strong defensive cybersecurity results'],
+    weaknesses: ['AA Intelligence Index v5 score of 26 trails open-weight generalists', 'Custom license restricts model-as-a-service use', 'Very large self-hosting footprint', 'Vendor benchmark comparisons still need workload-specific replication'],
     bestFor: ['European sovereign AI', 'Private cybersecurity workflows', 'Multilingual enterprise work', 'Multimodal self-hosting'],
-    benchmark: { label: 'AA Intelligence Index', score: '38' },
+    benchmark: { label: 'AA Intelligence Index v5', score: '26' },
     website: 'https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B',
     hot: true,
   },
