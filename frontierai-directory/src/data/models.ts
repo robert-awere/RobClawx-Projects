@@ -33,7 +33,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
-export const LAST_UPDATED = '2026-11-03';
+export const LAST_UPDATED = '2026-11-06';
 
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
@@ -232,11 +232,11 @@ export const MODELS: AIModel[] = [
     pricing: { input: 2, output: 10 },
     tagline: 'The new intelligence leader, still limited to trusted testers',
     description:
-      'Google\'s October 28 frontier model leads the independent Artificial Analysis Intelligence Index v5 at 59 and ranks second on its Coding Agent Index. It accepts text, image, audio, and video across a 1M context window. The $2/$10 rate is introductory; standard pricing is $4/$20. Carbon is not yet generally available, so Argon remains Google\'s deployable frontier model.',
+      'Google\'s October 28 frontier model leads the independent Artificial Analysis Intelligence Index v5.0.1 at 60 and ranks second on its Coding Agent Index. It accepts text, image, audio, and video across a 1M context window. The $2/$10 rate is introductory; standard pricing is $4/$20. Carbon is not yet generally available, so Argon remains Google\'s deployable frontier model.',
     strengths: ['#1 AA Intelligence Index v5', '#2 AA Coding Agent Index', '1M multimodal context', '#2 preliminary Agent Arena result'],
     weaknesses: ['Not publicly available', 'Introductory-price end date is unspecified', 'Very verbose in independent testing', 'Google cyber and alignment comparisons are largely vendor-run'],
     bestFor: ['Future long-horizon coding pilots', 'Defensive cybersecurity evaluation', 'Complex scientific reasoning', 'Multimodal agent workflows'],
-    benchmark: { label: 'AA Intelligence Index v5', score: '59 (#1)' },
+    benchmark: { label: 'AA Intelligence Index v5.0.1', score: '60 (#1)' },
     website: 'https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/',
     hot: true,
   },
@@ -350,20 +350,21 @@ export const MODELS: AIModel[] = [
     provider: 'Moonshot AI',
     providerColor: '#52525b',
     category: ['language', 'reasoning', 'coding', 'multimodal'],
-    openWeight: false,
+    openWeight: true,
     released: '2026-10',
     context: 1048576,
     contextLabel: '1M',
     pricing: { input: 2, output: 10 },
     params: '2.8T MoE / 104B active',
-    tagline: 'A top-tier agent model whose promised open weights are still pending',
+    license: 'Kimi K3.1 Pro License',
+    tagline: 'The new open-weight agent leader, with an enormous serving footprint',
     description:
-      'Moonshot\'s heavily post-trained K3 successor reaches 55 on the independent Artificial Analysis Intelligence Index and leads Terminal-Bench 4.0 at 67% in that evaluation. Its $2/$10 API rate is one third below K3. Moonshot promises full weights by November 4; until they are actually published with a license, this catalog treats K3.1 Pro as proprietary.',
-    strengths: ['AA Intelligence Index 55', '67% on independent Terminal-Bench 4.0', '1M text-and-image context', '33% lower API rates than K3'],
-    weaknesses: ['Weights and license are not yet published', 'Used about 55K output tokens per AA task', 'Thinking cannot be disabled', 'Official web search is not recommended for production yet'],
+      'Moonshot published the 2.8T-parameter MXFP4 checkpoint on November 4 under its custom Kimi K3.1 Pro License. Independent Artificial Analysis testing scores it 46 on Intelligence Index v5, the highest current open-weight result, and 67% on Terminal-Bench 4.0. Its $2/$10 API rate is one third below K3, but self-hosting 104B active parameters remains an infrastructure-scale undertaking.',
+    strengths: ['#1 open-weight AA Intelligence Index v5', '67% on independent Terminal-Bench 4.0', 'Downloadable MXFP4 weights', '1M text-and-image context'],
+    weaknesses: ['Custom license restricts some large commercial services', 'Enormous 2.8T/104B-active serving footprint', 'Thinking cannot be disabled', 'Official web search is not recommended for production yet'],
     bestFor: ['Long-horizon coding agents', 'Professional knowledge work', '3D and CAD workflows', 'Financial research with verification'],
-    benchmark: { label: 'AA Intelligence Index v4.3.2', score: '55 (#4)' },
-    website: 'https://platform.moonshot.ai/docs/guide/kimi-k3-1-pro-quickstart',
+    benchmark: { label: 'AA Intelligence Index v5', score: '46 (#1 open)' },
+    website: 'https://huggingface.co/moonshotai/Kimi-K3.1-Pro',
     hot: true,
   },
   {
@@ -745,23 +746,22 @@ export const MODELS: AIModel[] = [
 
   // ── Image ───────────────────────────────────────────────
   {
-    id: 'gpt-image-2-5',
-    name: 'GPT Image 2.5',
+    id: 'gpt-image-2-6',
+    name: 'GPT Image 2.6',
     provider: 'OpenAI',
     providerColor: '#0d8a6a',
     category: ['image'],
     openWeight: false,
-    released: '2026-09',
+    released: '2026-11',
     context: null,
     pricing: { input: null, output: null },
-    tagline: 'Two new leaders for fast and precision image work',
+    tagline: 'Faster image iteration, precise edits, and native GIF and SVG output',
     description:
-      'OpenAI\'s September family splits the API into Flare for fast everyday generation and Sunburst for slower, precision editing. Independent Artificial Analysis testing ranks Flare first for text-to-image at 1188 Elo and Sunburst first for editing at 1167. OpenAI reports up to 50% lower latency than GPT Image 2; token rates are unchanged at $5/M text input, $8/M image input, and $30/M image output.',
-    strengths: ['#1 AA text-to-image and editing variants', 'Strong reference-image fidelity', 'More consistent multi-turn edits', 'Flare cuts latency by up to 50% (vendor-reported)'],
-    weaknesses: ['About $211 per 1,000 max-quality 1024px images in independent testing', 'Closed, API/ChatGPT only', 'Sunburst trades speed for precision'],
-    bestFor: ['Marketing graphics', 'Product imagery', 'Reference-led editing', 'Iterative creative workflows'],
-    benchmark: { label: 'AA Text-to-Image Elo (Flare max)', score: '1188 (#1)' },
-    website: 'https://openai.com/index/introducing-chatgpt-images-2-5/',
+      'OpenAI\'s November family keeps Flare for rapid iteration and Sunburst for detailed visual work while adding animated GIFs, SVG output, markup-guided edits, and a separate complexity control. OpenAI reports 50% faster generation and stronger edit consistency; independent rankings are not yet available. Token rates remain $5/M text input, $8/M image input, and $30/M image output.',
+    strengths: ['Animated GIF and SVG output', 'Markup-guided editing', 'Separate complexity and quality controls', '50% faster generation (vendor-reported)'],
+    weaknesses: ['No independent quality ranking yet', 'Closed, API/ChatGPT only', 'Token rates remain premium', 'Sunburst trades speed for detail'],
+    bestFor: ['Marketing graphics and GIFs', 'Product imagery', 'Reference-led editing', 'Iterative creative workflows'],
+    website: 'https://openai.com/index/introducing-images-2-6/',
     hot: true,
   },
   {
@@ -884,6 +884,25 @@ export const MODELS: AIModel[] = [
   },
 
   // ── Video ───────────────────────────────────────────────
+  {
+    id: 'gemini-omni-1-2-flash',
+    name: 'Gemini Omni 1.2 Flash',
+    provider: 'Google DeepMind',
+    providerColor: '#2f6bd8',
+    category: ['video'],
+    openWeight: false,
+    released: '2026-11',
+    context: null,
+    pricing: { input: null, output: null },
+    tagline: 'Production-ready 15-second video with conversational editing',
+    description:
+      'Google\'s generally available video model generates three-to-fifteen-second clips with audio and supports multi-turn editing, reference images, short motion clips, keyframes, and upscaling to 1080p or 4K. Google cut 720p generation pricing by 30% to $0.07 per second. Claims of better consistency, reference adherence, speech, and camera control remain vendor-reported pending independent evaluation.',
+    strengths: ['3–15 second clips in one-second increments', '$0.07 per second at 720p', 'Multi-turn conversational editing', 'Image, motion, audio, and keyframe controls'],
+    weaknesses: ['No independent arena result yet', 'Fast sports and complex physics remain known weak spots', 'Proprietary API and Google products only'],
+    bestFor: ['Product and social ads', 'Reference-led video variants', 'Short explainers', 'Conversational video editing'],
+    website: 'https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/',
+    hot: true,
+  },
   {
     id: 'sora-2',
     name: 'Sora 2',
