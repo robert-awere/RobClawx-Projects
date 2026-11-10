@@ -33,28 +33,28 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
-export const LAST_UPDATED = '2026-11-06';
+export const LAST_UPDATED = '2026-11-10';
 
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
   {
-    id: 'claude-fable-5-1',
-    name: 'Claude Fable 5.1',
+    id: 'claude-fable-5-2',
+    name: 'Claude Fable 5.2',
     provider: 'Anthropic',
     providerColor: '#c45f3d',
     category: ['language', 'reasoning', 'coding', 'multimodal'],
     openWeight: false,
-    released: '2026-09',
+    released: '2026-11',
     context: 1000000,
-    pricing: { input: 10, output: 50 },
-    tagline: 'The intelligence leader, with cheaper cache reads',
+    pricing: { input: 8, output: 40 },
+    tagline: 'The new intelligence leader, with a very expensive max setting',
     description:
-      'Anthropic\'s September frontier model scores 57 on the current independent Artificial Analysis Intelligence Index at max effort. Standard token pricing remains $10/$50, while cache reads cost $0.25 per million tokens. Opus 5.5 now scores one point higher at less than half the token price, making Fable the specialist ceiling rather than the automatic premium default.',
-    strengths: ['AA Intelligence Index 57 (max effort)', 'Strong agentic coding and knowledge work', '1M multimodal context', '$0.25 cache reads'],
-    weaknesses: ['Expensive at $10/$50', 'Max effort cost more per task than Fable 5 in independent testing', 'Safety fallbacks can change the serving model'],
-    bestFor: ['Hardest agentic coding', 'Long-horizon autonomous runs', 'Research-grade analysis', 'High-stakes knowledge work'],
-    benchmark: { label: 'AA Intelligence Index v4.3.2', score: '57' },
-    website: 'https://www.anthropic.com/claude-fable-and-mythos-5-1',
+      'Anthropic\'s November frontier model cuts Fable 5.1 token rates by 20% and cache reads to $0.20 per million tokens. Independent Artificial Analysis testing scores max effort at 65 on Intelligence Index v5.0.1, the current lead, but measures about $26.54 and 46 minutes per evaluated task. Anthropic recommends Opus 5.5 for most work and Fable for the hardest technical problems.',
+    strengths: ['#1 AA Intelligence Index v5.0.1', 'Strong agentic coding and scientific work', '1M multimodal context', '$0.20 cache reads'],
+    weaknesses: ['Still expensive at $8/$40', 'Max effort was extremely slow and costly in independent testing', 'Cyber and biology safeguards can change the serving model'],
+    bestFor: ['Hardest agentic coding', 'Scientific and engineering research', 'Long-horizon autonomous runs', 'High-stakes technical analysis'],
+    benchmark: { label: 'AA Intelligence Index v5.0.1', score: '65 (#1)' },
+    website: 'https://www.anthropic.com/claude-fable-and-mythos-5-2',
     hot: true,
   },
   {
@@ -592,6 +592,27 @@ export const MODELS: AIModel[] = [
     bestFor: ['Long-running professional agents', 'Complex coding workflows', 'Computer-use automation', 'Multimodal document work'],
     benchmark: { label: 'AA Intelligence Index v4.3.2', score: '52' },
     website: 'https://developer.meta.com/ai/models/muse-wonder/',
+    hot: true,
+  },
+  {
+    id: 'muse-ember',
+    name: 'Muse Ember',
+    provider: 'Meta',
+    providerColor: '#0553c4',
+    category: ['language', 'reasoning', 'coding', 'multimodal'],
+    openWeight: false,
+    released: '2026-11',
+    context: 1048576,
+    contextLabel: '1M',
+    pricing: { input: 0.1, output: 0.5 },
+    tagline: 'The new low-cost agent efficiency leader',
+    description:
+      'Meta\'s efficient agent model accepts text, image, audio, and video and supports up to 512K output tokens. Independent Artificial Analysis testing scores max effort at 36 and $0.14 per evaluated task, matching Claude Haiku 5.5\'s intelligence score at about one third of its task cost. Its low hallucination rate partly reflects declining 64% of knowledge questions.',
+    strengths: ['AA Intelligence Index 36', '$0.10/$0.50 token pricing', '$0.004 cache reads', '1M multimodal context'],
+    weaknesses: ['Low independent knowledge accuracy', 'Declined 64% of AA knowledge questions', 'Closed weights', 'Independent evidence outside Artificial Analysis is still early'],
+    bestFor: ['High-volume agent substeps', 'Routing and extraction', 'Coding subagents', 'Long-document parsing'],
+    benchmark: { label: 'AA Intelligence Index v5.0.1', score: '36' },
+    website: 'https://research.meta.ai/blog/muse-ember',
     hot: true,
   },
   {

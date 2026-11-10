@@ -871,5 +871,80 @@
         "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-argon/"
       }
     ]
+  },
+  {
+    "slug": "claude-fable-5-2-vs-muse-ember-agent-model-guide",
+    "title": "Claude Fable 5.2 vs Muse Ember: build an agent model ladder",
+    "description": "Two November releases redraw opposite ends of the AI model market. Here is when Fable 5.2, Muse Ember, Opus 5.5, Haiku 5.5, or GPT-6 Luna belongs in an agent.",
+    "published": "2026-11-10",
+    "models": [
+      "Claude Fable 5.2",
+      "Claude Opus 5.5",
+      "Claude Haiku 5.5",
+      "Muse Ember",
+      "GPT-6 Luna"
+    ],
+    "sections": [
+      {
+        "heading": "November moved the ceiling and the floor on the same day",
+        "paragraphs": [
+          "Claude Fable 5.2 and Muse Ember arrived on November 9 for opposite jobs. Anthropic built Fable for unusually difficult, open-ended technical work; Meta built Ember for the repeated routing, extraction, tool, document, and coding steps that consume most agent calls. Treating either as a universal default misses the economic point. Fable raises the measured capability ceiling while Ember lowers the cost of credible agent execution. The useful architecture is not a contest between them, but a small escalation ladder that gives each model only the work its evidence supports.",
+          "The independent headline is clear but incomplete. Artificial Analysis scores Fable 5.2 at 65 on Intelligence Index v5.0.1 at maximum effort, the highest current result. It scores Muse Ember at 36, level with Claude Haiku 5.5 at maximum effort. A 29-point gap makes the models unsuitable substitutes on the hardest tasks. Yet the evaluator measured Ember at about $0.14 per index task and Fable max at about $26.54. That roughly 190-fold cost gap makes Fable equally unsuitable as the unexamined engine for every subtask in a long agent trajectory.",
+          "Both vendors publish attractive launch comparisons, but the evidence needs labels. Anthropic reports gains in coding, science, robotics, computer use, and knowledge work; Meta reports stronger agent and multimodal results than similarly priced small models. Those tables are vendor-reported even when they name public benchmarks. Artificial Analysis provides an independent common harness for intelligence, token use, cost, and selected agent evaluations. Arena added both models to WebDev on November 9, but the new entries do not yet provide the mature, broad preference evidence available for older models."
+        ]
+      },
+      {
+        "heading": "Fable 5.2 is a specialist escalation route, not the new default",
+        "paragraphs": [
+          "Anthropic cut Fable's standard API price from $10 per million input tokens and $50 per million output tokens to $8/$40. Cache reads are $0.20 per million tokens, and optional fast mode doubles the base rates to $16/$80. The model keeps the one-million-token context class and is available through Anthropic and major cloud platforms. A 20% token-price reduction is meaningful, but it does not make Fable cheap. Long agent traces, large outputs, retries, and maximum effort can still produce a substantial task bill.",
+          "Independent testing shows both the reason to use it and the reason to constrain it. Fable 5.2 max leads the current Artificial Analysis index at 65, ahead of Gemini 4 Carbon and Claude Opus 5.5 under the evaluator's current methodology. The same evaluation reports roughly 46 minutes and $26.54 per task at max. Lower settings change the operating profile sharply: Artificial Analysis reports scores of 54 at low, 56 at medium, and 62 at both high and xhigh. High therefore deserves testing before max; spending more reasoning time did not improve the composite score at xhigh in that run.",
+          "Anthropic itself recommends Opus 5.5 as the starting point for most coding and knowledge tasks, with Fable reserved for harder work. That is the sensible production boundary. Escalate to Fable for a stubborn repository migration, difficult scientific workflow, ambiguous engineering design, or high-value analysis after a cheaper route fails an explicit acceptance check. Keep Opus as the premium daily driver when judgment matters but the task is not demonstrably at the frontier. Fable's cyber and biology safeguards can also return another Claude model, so sensitive evaluations must log the model actually served rather than trusting the requested name."
+        ]
+      },
+      {
+        "heading": "Muse Ember is the volume route, with a knowledge warning",
+        "paragraphs": [
+          "Muse Ember costs $0.10 per million input tokens, $0.004 per million cached input tokens, and $0.50 per million output tokens. It accepts text, images, audio, and video, exposes a one-million-token context window, and supports up to 512,000 output tokens through Meta's Responses-compatible API. Those specifications make it a plausible engine for high-volume subagents: classify a request, inspect a file, parse a long document, run a bounded coding step, or choose the next tool before handing the result back to a stronger coordinator.",
+          "Artificial Analysis gives Ember a stronger case than list price alone. Its maximum-effort configuration scores 36 on the current Intelligence Index at about $0.14 per evaluated task, matching Claude Haiku 5.5's score at roughly one third of Haiku's measured task cost. Ember also scores 46 in the evaluator's Coding Agent Index when run in Muse Code, ahead of the tested Haiku and GPT-6 Luna configurations. Those are useful independent results, but they remain harness-specific; an application using a different tool loop, prompt format, or retry policy may see a different order.",
+          "Knowledge is the material limitation. Artificial Analysis reports only 21.1% accuracy for Ember on AA-Omniscience and says it declined 64% of questions. That selectivity helped keep its hallucination rate low, but a refusal is still a failed result when the workflow requires an answer. Use Ember where outputs are cheaply verifiable: schemas, test suites, known labels, deterministic tool responses, or checklists. Keep Haiku in the trial where factual coverage and Anthropic integration matter, and keep Luna where OpenAI tooling or its dedicated bounded-decision path reduces integration work. Do not infer reliability from a low hallucination percentage without checking the attempt rate."
+        ]
+      },
+      {
+        "heading": "A three-tier agent policy captures most of the value",
+        "paragraphs": [
+          "Start with twenty to fifty completed tasks from the real workflow. Include routine successes, known failures, long contexts, tool errors, ambiguous instructions, and cases that required human correction. Run Ember, the current small-model route, Opus 5.5, and Fable 5.2 at high effort on the slices each could plausibly own. Record accepted completion, abstentions, omitted requirements, reviewer minutes, retries, input and cached tokens, output tokens, latency, fallback behavior, and billed cost. Add Fable max only for tasks where high fails; otherwise the evaluation bakes unnecessary expense into the result.",
+          "The first production rule can remain deliberately boring. Tier one uses Muse Ember for repeatable, machine-checkable steps. Tier two uses Opus 5.5—or the incumbent strong workhorse—for ambiguous planning, integration, and final outputs that are expensive to review. Tier three escalates only failed or unusually consequential technical work to Fable 5.2. Haiku 5.5 and GPT-6 Luna are controls, not mandatory extra routes: retain one only when it wins owned tasks, fits an existing platform, or offers operational behavior Ember does not.",
+          "This policy avoids two common mistakes. The first is paying frontier prices for every token because the strongest model won a composite benchmark. The second is routing everything to the cheapest model and recovering the apparent saving through retries and human review. Fable 5.2 earns a place as the current capability ceiling; Ember earns a place as a new efficiency floor. Neither earns the entire workload. Promote each route only when accepted-task data shows that it reduces total cost or changes outcomes, and remove any tier that cannot justify its operational complexity."
+        ],
+        "bullets": [
+          "Volume tier: Muse Ember for bounded, verifiable agent substeps.",
+          "Judgment tier: Claude Opus 5.5 or the existing strong workhorse for ambiguous integration and final review.",
+          "Escalation tier: Claude Fable 5.2 high first, then max only after a measurable failure.",
+          "Vendor-reported: launch benchmark and speed claims; independently measured: Artificial Analysis scores, task cost, token use, and selected agent results."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Anthropic: Introducing Claude Fable 5.2 and Claude Mythos 5.2",
+        "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+      },
+      {
+        "label": "Meta: Introducing Muse Ember",
+        "url": "https://research.meta.ai/blog/muse-ember"
+      },
+      {
+        "label": "Artificial Analysis: Claude Fable 5.2 evaluation",
+        "url": "https://artificialanalysis.ai/models/releases/claude-fable-5-2"
+      },
+      {
+        "label": "Artificial Analysis: Muse Ember evaluation",
+        "url": "https://artificialanalysis.ai/articles/meta-s-muse-ember-is-the-cheapest-model-scoring-36-on-the-intelligence-index"
+      },
+      {
+        "label": "Arena: Leaderboard changelog",
+        "url": "https://arena.ai/company/leaderboard-changelog"
+      }
+    ]
   }
 ]
