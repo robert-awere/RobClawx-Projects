@@ -33,7 +33,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
-export const LAST_UPDATED = '2026-11-10';
+export const LAST_UPDATED = '2026-11-13';
 
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
@@ -230,14 +230,35 @@ export const MODELS: AIModel[] = [
     context: 1000000,
     contextLabel: '1M',
     pricing: { input: 2, output: 10 },
-    tagline: 'The new intelligence leader, still limited to trusted testers',
+    tagline: 'Google\'s public frontier tier for the hardest long-horizon work',
     description:
-      'Google\'s October 28 frontier model leads the independent Artificial Analysis Intelligence Index v5.0.1 at 60 and ranks second on its Coding Agent Index. It accepts text, image, audio, and video across a 1M context window. The $2/$10 rate is introductory; standard pricing is $4/$20. Carbon is not yet generally available, so Argon remains Google\'s deployable frontier model.',
-    strengths: ['#1 AA Intelligence Index v5', '#2 AA Coding Agent Index', '1M multimodal context', '#2 preliminary Agent Arena result'],
-    weaknesses: ['Not publicly available', 'Introductory-price end date is unspecified', 'Very verbose in independent testing', 'Google cyber and alignment comparisons are largely vendor-run'],
-    bestFor: ['Future long-horizon coding pilots', 'Defensive cybersecurity evaluation', 'Complex scientific reasoning', 'Multimodal agent workflows'],
-    benchmark: { label: 'AA Intelligence Index v5.0.1', score: '60 (#1)' },
-    website: 'https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/',
+      'Google made Carbon available to all paying Gemini API developers on November 10. Independent Artificial Analysis testing scores it 60 on Intelligence Index v5.0.1, still above Hydrogen\'s 54, but Google positions the more token-intensive model for unusually difficult coding, science, cybersecurity, and long-horizon reasoning. Its introductory $2/$10 rate rises to $4/$20 on December 1.',
+    strengths: ['AA Intelligence Index v5 score of 60', 'Strong long-horizon coding and scientific reasoning', '1M multimodal context', 'Now available on the paid Gemini API'],
+    weaknesses: ['Price doubles to $4/$20 on December 1', 'More token-intensive than Argon or Hydrogen', 'Very verbose in independent testing', 'Cyber and alignment comparisons remain partly vendor-run'],
+    bestFor: ['Hardest long-horizon coding', 'Defensive cybersecurity evaluation', 'Complex scientific reasoning', 'High-value multimodal agent workflows'],
+    benchmark: { label: 'AA Intelligence Index v5.0.1', score: '60' },
+    website: 'https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/',
+    hot: true,
+  },
+  {
+    id: 'gemini-4-hydrogen',
+    name: 'Gemini 4 Hydrogen',
+    provider: 'Google DeepMind',
+    providerColor: '#2f6bd8',
+    category: ['language', 'reasoning', 'coding', 'multimodal'],
+    openWeight: false,
+    released: '2026-11',
+    context: 1048576,
+    contextLabel: '1M unified',
+    pricing: { input: 1.5, output: 7.5 },
+    tagline: 'The Gemini 4 execution tier, with four sharply different effort settings',
+    description:
+      'Google\'s generally available execution model accepts text, image, audio, video, and PDFs across a unified 1M-token input-output window. Independent Artificial Analysis testing scores it from 27 at low effort to 54 at xhigh; measured task cost rises from $0.29 to $3.16 and xhigh is very verbose. Flat $1.50/$7.50 pricing and $0.075 cache reads make high or medium the more credible production starting points.',
+    strengths: ['AA Intelligence Index 54 at xhigh', '1M unified multimodal context with long decode', 'Four reasoning-effort levels', '95% implicit-cache discount'],
+    weaknesses: ['Xhigh is very verbose and averaged $3.16 per AA task', 'Performance falls sharply at medium and low effort', 'Thinking tokens are billed as output', 'No explicit context caching'],
+    bestFor: ['Everyday coding agents', 'Parallel worker and verifier agents', 'Multimodal document workflows', 'Interactive tool use'],
+    benchmark: { label: 'AA Intelligence Index v5.0.1', score: '54 (xhigh)' },
+    website: 'https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/',
     hot: true,
   },
   {
