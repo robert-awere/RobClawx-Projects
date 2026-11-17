@@ -33,7 +33,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
-export const LAST_UPDATED = '2026-11-13';
+export const LAST_UPDATED = '2026-11-17';
 
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
@@ -527,25 +527,24 @@ export const MODELS: AIModel[] = [
 
   // ── Alibaba ─────────────────────────────────────────────
   {
-    id: 'qwen-3-8-max',
-    name: 'Qwen3.8-Max',
+    id: 'qwen-4-max',
+    name: 'Qwen4-Max',
     provider: 'Alibaba',
     providerColor: '#e05500',
     category: ['language', 'reasoning', 'coding', 'multimodal'],
-    openWeight: true,
-    released: '2026-08',
+    openWeight: false,
+    released: '2026-11',
     context: 1000000,
-    pricing: { input: 2, output: 6 },
-    params: '2.4T MoE / 95B active',
-    license: 'Qwen3.8-Max License',
-    tagline: 'Alibaba\'s multimodal long-horizon flagship',
+    pricing: { input: 1.5, output: 4.5 },
+    params: '2.4T MoE / 71B active',
+    tagline: 'A cheaper Qwen flagship with stronger coding and agent performance',
     description:
-      'Alibaba\'s 2.4T-parameter API flagship handles text, image, and video across a 1M context window with up to 131K output at $2/$6 internationally. The downloadable 2.4T/95B-active checkpoint is now available, but it is text-only, requires thinking mode, and uses a custom license with attribution and large-provider restrictions.',
-    strengths: ['1M multimodal API context', 'Downloadable 2.4T weights', 'Strong agentic knowledge work', 'Adjustable API reasoning effort'],
-    weaknesses: ['Open checkpoint is text-only and always-thinking', 'Custom license restricts some large providers', 'Regional pricing varies', 'Vendor long-horizon claims need independent replication'],
-    bestFor: ['Long-horizon agents', 'Multimodal document work', 'Multilingual products', 'Chinese-language business'],
-    benchmark: { label: 'GDPval-AA v2', score: '1739' },
-    website: 'https://qwen.ai/blog/qwen3.8-max',
+      'Alibaba\'s November flagship replaces Qwen3.8-Max with native text, image, and video input, a 1M context window, and $1.50/$4.50 international pricing. Independent Artificial Analysis testing scores it 43, up nine points from the prior Max checkpoint, but measures 32 minutes and $3.27 per task with very high output-token use. The 2.4T/71B-active model is API-only; Alibaba says smaller Qwen4 weights will follow.',
+    strengths: ['AA Intelligence Index v5 score of 43', 'Preliminary #6 in Arena WebDev', '1M multimodal context', '$0.075 cached-input reads'],
+    weaknesses: ['Very verbose and slow in independent testing', 'Closed weights', 'Trails the general-intelligence frontier', 'Vendor efficiency gains need workload-specific replication'],
+    bestFor: ['Cost-sensitive coding agents', 'Multimodal document and video analysis', 'Frontend generation', 'Chinese-language business workflows'],
+    benchmark: { label: 'AA Intelligence Index v5.0.1', score: '43' },
+    website: 'https://www.alibabacloud.com/en/press-room/alibaba-unveils-qwen4-max',
     hot: true,
   },
   {
