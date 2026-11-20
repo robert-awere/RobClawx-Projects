@@ -1089,5 +1089,87 @@
         "url": "https://arena.ai/leaderboard/code/webdev"
       }
     ]
+  },
+  {
+    "slug": "gpt-6-2-astra-sol-vs-gemini-4-neon",
+    "title": "GPT-6.2 Astra and Sol vs Gemini 4 Neon: which model should you use?",
+    "description": "OpenAI and Google released three frontier models within two days. Independent tests clarify the best route for difficult, everyday, and multimodal agent work.",
+    "published": "2026-11-20",
+    "models": [
+      "GPT-6.2 Astra",
+      "GPT-6.2 Sol",
+      "Gemini 4 Neon",
+      "Claude Fable 5.2"
+    ],
+    "sections": [
+      {
+        "heading": "Three new models create separate premium, workhorse, and multimodal choices",
+        "paragraphs": [
+          "OpenAI released GPT-6.2 Astra and GPT-6.2 Sol on November 17, and Google followed with Gemini 4 Neon on November 18. All three are available through their vendors' APIs rather than restricted previews. Astra is OpenAI's premium model for difficult professional and scientific work, Sol is its lower-cost everyday route, and Neon sits between Google's Hydrogen and Carbon tiers for complex, high-frequency workflows. The timing invites a single winner story, but their prices and independent results support three different buying decisions.",
+          "The official specifications establish the operating boundaries. Astra costs $8 per million input tokens and $40 per million output tokens; Sol costs $2/$10; Neon costs $3/$15. OpenAI documents 1.05-million-token context windows, 128,000-token maximum outputs, text and image input, and five reasoning levels for both models. Google documents a one-million-token multimodal window, text, image, audio, video, and PDF input, and four effort levels for Neon. Cached input costs $0.40 for Astra, $0.10 for Sol, and $0.15 for Neon.",
+          "Those prices need caveats. OpenAI doubles input and cache rates and charges 1.5 times the output rate when a request exceeds 272,000 input tokens. It also charges more for Fast and Ultrafast processing. Google prices Neon flat across its published context window, but thinking tokens are billed as output and higher effort can increase consumption sharply. A large context window therefore does not make retrieval, compact prompts, caching, or task-level cost measurement optional."
+        ]
+      },
+      {
+        "heading": "Astra owns OpenAI's capability ceiling, but not every coding benchmark",
+        "paragraphs": [
+          "Independent Artificial Analysis testing scores GPT-6.2 Astra at 62 on Intelligence Index v5.0.1 at maximum effort, second only to Claude Fable 5.2's 65 in the current table. The evaluator reports particular strength in science, factual knowledge, 3D work, and robotics. OpenAI also reports stronger professional documents, spreadsheets, slides, coding, computer use, and scientific workflows than GPT-6 Astra. Those OpenAI comparisons are vendor-reported; the Artificial Analysis score and component results are the independent evidence.",
+          "The main limitation is that broader intelligence gains did not produce a clean coding-agent upgrade in the independent harness. Artificial Analysis found GPT-6.2 Astra flat with GPT-6 Astra on its Coding Agent Index. That does not mean the model cannot code: OpenAI reports strong FrontierCode and professional software results, and Arena's early WebDev table places Astra near the top. It means buyers should not infer a universal repository-work improvement from the general intelligence score or OpenAI's launch table.",
+          "Astra's strongest case is work where a better first result can avoid costly review or retries: scientific terminal workflows, complex professional artifacts, difficult engineering, 3D creation, and robotics planning. The new $8/$40 rate is 20% below GPT-6 Astra, and OpenAI says the model uses fewer output tokens on demanding work. It remains a premium model. Use it as an escalation route or a measured specialist, not as the automatic engine for extraction, routine implementation, or every step in an agent trajectory."
+        ]
+      },
+      {
+        "heading": "Sol is the value default, while Neon offers a faster multimodal ceiling",
+        "paragraphs": [
+          "GPT-6.2 Sol keeps GPT-6.1 Sol's $2/$10 rate and improves its independent Intelligence Index score to 57. Artificial Analysis places several Sol effort settings on the cost-per-task frontier and reports that the maximum setting reaches the original GPT-6 Astra's broad score at roughly 15% of Astra's evaluated task cost. That makes Sol the obvious first OpenAI trial for everyday professional work, structured agents, computer use, and tasks where acceptance can be checked cheaply.",
+          "Sol also carries the clearest regression warning in this release. Artificial Analysis reports a three-point decline from GPT-6.1 Sol on its Coding Agent Index, driven partly by a large drop on repository questions where the new model omitted key facts. OpenAI reports near-Astra performance on FrontierCode 2.0, but that is a vendor-run result under a different evaluation. Teams already satisfied with GPT-6.1 Sol should compare the two versions on real repository tasks instead of migrating solely because 6.2 is newer.",
+          "Gemini 4 Neon provides the stronger independent ceiling of the two workhorse-priced candidates. Artificial Analysis scores Neon at 60 on high effort and 61 on xhigh, with xhigh one point above Gemini 4 Carbon. It also measures roughly 110 output tokens per second, about twice Carbon's rate, and a 40% shorter average task time. Neon costs more per token than Sol and used about 15% more output tokens than Carbon in the evaluator's run. Its advantage comes from capability, lower rates than Carbon's standard price, and faster generation—not from unusually frugal token use."
+        ]
+      },
+      {
+        "heading": "Choose by verification cost and modality, then run one small replacement test",
+        "paragraphs": [
+          "Start with twenty to fifty completed tasks from the intended workload. Include routine successes, difficult failures, repository questions, long inputs, multimodal documents, tool errors, and deliverables that previously needed human correction. Run Sol at the effort level likely to enter production, Neon at high, and Astra only on the hard slice. Record accepted completion, omitted requirements, factual errors, reviewer minutes, retries, input and cached tokens, reasoning and output tokens, latency, tool calls, and billed cost.",
+          "The first routing policy should remain small. Use GPT-6.2 Sol as the price control for structured everyday work in an OpenAI stack. Use Gemini 4 Neon when audio, video, PDFs, faster frontier-class generation, or Google's ecosystem materially matters. Escalate to GPT-6.2 Astra when scientific depth, professional artifact quality, 3D work, or expensive failure can justify premium rates. Keep Claude Fable 5.2 in the evaluation only for the hardest cases where its higher independent general score might change the result.",
+          "Do not compare only maximum settings. Artificial Analysis scores Neon high just one point below xhigh, while lower effort changes task cost and latency. OpenAI's five effort levels likewise create several Sol and Astra operating profiles behind each model name. Vendor launch benchmarks identify useful test cases; they do not prove savings on a private workload. Independent benchmarks improve comparability but remain harness-specific. The winning route is the one that produces accepted work at lower total cost, not the one with the newest name or the largest composite score."
+        ],
+        "bullets": [
+          "Premium specialist: GPT-6.2 Astra for scientific, professional-artifact, 3D, and high-cost-failure work.",
+          "Value default: GPT-6.2 Sol for structured everyday agents, with GPT-6.1 Sol retained as the coding control.",
+          "Multimodal frontier route: Gemini 4 Neon high before xhigh, especially for audio, video, PDF, and Google-native workflows.",
+          "Vendor-reported: launch benchmark and efficiency claims; independently measured: Artificial Analysis intelligence, coding, token-use, speed, and task-cost results."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "OpenAI: Introducing GPT-6.2 Astra and Sol",
+        "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/"
+      },
+      {
+        "label": "OpenAI API: GPT-6.2 Astra model and pricing",
+        "url": "https://developers.openai.com/api/docs/models/gpt-6.2-astra"
+      },
+      {
+        "label": "OpenAI API: GPT-6.2 Sol model and pricing",
+        "url": "https://developers.openai.com/api/docs/models/gpt-6.2-sol"
+      },
+      {
+        "label": "Google: Introducing Gemini 4 Neon",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
+      },
+      {
+        "label": "Artificial Analysis: GPT-6.2 Astra and Sol independent evaluation",
+        "url": "https://artificialanalysis.ai/articles/openai-has-the-2-model-in-the-intelligence-index-with-the-release-of-gpt-6-2-astra-and-gpt-6-2-sol"
+      },
+      {
+        "label": "Artificial Analysis: Gemini 4 Neon independent evaluation",
+        "url": "https://artificialanalysis.ai/articles/gemini-4-neon-intelligence-gain"
+      },
+      {
+        "label": "Arena: Agent Arena Index",
+        "url": "https://arena.ai/leaderboard/agent"
+      }
+    ]
   }
 ]

@@ -33,7 +33,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
-export const LAST_UPDATED = '2026-11-17';
+export const LAST_UPDATED = '2026-11-20';
 
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
@@ -120,23 +120,23 @@ export const MODELS: AIModel[] = [
 
   // ── OpenAI ──────────────────────────────────────────────
   {
-    id: 'gpt-6-astra',
-    name: 'GPT-6 Astra',
+    id: 'gpt-6-2-astra',
+    name: 'GPT-6.2 Astra',
     provider: 'OpenAI',
     providerColor: '#0d8a6a',
     category: ['language', 'reasoning', 'coding', 'multimodal'],
     openWeight: false,
-    released: '2026-09',
+    released: '2026-11',
     context: 1050000,
-    pricing: { input: 10, output: 50 },
-    tagline: 'A coding leap, not a universal value upgrade',
+    pricing: { input: 8, output: 40 },
+    tagline: 'OpenAI\'s new professional-work ceiling at a lower task cost',
     description:
-      'OpenAI\'s flagship pairs 1.05M context with computer use and five reasoning-effort levels. Independent Artificial Analysis testing scores it 67 on the Coding Agent Index and 53 on the current broader Intelligence Index. GPT-6 Sol now offers a lower ceiling at one fifth of Astra\'s token price, so Astra is best reserved for work where its capability advantage changes the outcome.',
-    strengths: ['AA Coding Agent Index 67', 'Strong computer use and agentic coding', '1.05M context, 128K output', 'Higher capability ceiling than GPT-6 Sol'],
-    weaknesses: ['$10/$50 standard price', 'GPT-6 Sol is five times cheaper per token', 'Limited rollout at launch', 'Long-context surcharge above 272K input'],
-    bestFor: ['High-value coding agents', 'Computer-use automation', 'Complex end-to-end engineering', 'Professional artifact creation'],
-    benchmark: { label: 'AA Coding Agent Index', score: '67' },
-    website: 'https://openai.com/index/gpt-6-astra/',
+      'OpenAI\'s November flagship cuts GPT-6 Astra token rates by 20% while improving professional, scientific, 3D, and robotics work. Independent Artificial Analysis testing scores max effort at 62 on Intelligence Index v5, second only to Claude Fable 5.2, but finds no gain on its Coding Agent Index. OpenAI\'s launch comparisons are vendor-reported; the strongest case is difficult work where quality and lower output-token use offset premium rates.',
+    strengths: ['AA Intelligence Index v5 score of 62', 'Leading independent 3D and robotics results', '1.05M context and 128K max output', '20% lower token rates than GPT-6 Astra'],
+    weaknesses: ['$8/$40 remains premium pricing', 'No independent Coding Agent Index gain over GPT-6 Astra', 'Long-context surcharge above 272K input', 'Stronger cyber and bio safeguards can restrict some requests'],
+    bestFor: ['Scientific research agents', 'Professional documents and spreadsheets', 'Complex end-to-end engineering', '3D and robotics workflows'],
+    benchmark: { label: 'AA Intelligence Index v5.0.1', score: '62 (#2)' },
+    website: 'https://developers.openai.com/api/docs/models/gpt-6.2-astra',
     hot: true,
   },
   {
@@ -160,23 +160,23 @@ export const MODELS: AIModel[] = [
     hot: true,
   },
   {
-    id: 'gpt-6-1-sol',
-    name: 'GPT-6.1 Sol',
+    id: 'gpt-6-2-sol',
+    name: 'GPT-6.2 Sol',
     provider: 'OpenAI',
     providerColor: '#0d8a6a',
     category: ['language', 'reasoning', 'coding', 'multimodal'],
     openWeight: false,
-    released: '2026-09',
+    released: '2026-11',
     context: 1050000,
     pricing: { input: 2, output: 10 },
-    tagline: 'Near-Astra intelligence at Sol pricing',
+    tagline: 'A stronger everyday agent at unchanged Sol pricing',
     description:
-      'OpenAI\'s September 29 upgrade keeps GPT-6 Sol\'s $2/$10 rates while halving cached-input cost to $0.10. Independent Artificial Analysis testing scores max effort at 52, one point behind Astra, at less than one quarter of Astra\'s evaluated task cost. It uses more output tokens than Sol, so lower effort settings remain important.',
-    strengths: ['AA Intelligence Index 52', 'Near-Astra agentic capability', '1.05M context and 128K max output', '95% cached-input discount'],
-    weaknesses: ['Used 10–30% more output tokens than GPT-6 Sol in independent testing', 'Astra retains the higher scientific and cyber ceiling', 'Cache writes cost 1.25x input', 'Long-context surcharge above 272K input'],
-    bestFor: ['Production coding agents', 'Computer-use automation', 'Professional document workflows', 'Cost-sensitive complex reasoning'],
-    benchmark: { label: 'AA Intelligence Index v4.3.2', score: '52' },
-    website: 'https://developers.openai.com/api/docs/models/gpt-6.1-sol',
+      'OpenAI\'s November workhorse keeps GPT-6.1 Sol\'s $2/$10 rates and $0.10 cache reads while improving broad intelligence and output efficiency. Independent Artificial Analysis testing scores max effort at 57 on Intelligence Index v5, level with the original GPT-6 Astra at about 15% of its evaluated task cost. Coding is the caveat: the same evaluator records a three-point Coding Agent Index decline versus GPT-6.1 Sol, driven by omitted facts.',
+    strengths: ['AA Intelligence Index v5 score of 57', '$2/$10 pricing with $0.10 cache reads', '1.05M context and 128K max output', 'Strong cost-per-task efficiency across effort levels'],
+    weaknesses: ['Independent Coding Agent Index fell versus GPT-6.1 Sol', 'Can omit key facts in repository questions', 'Long-context surcharge above 272K input', 'Astra retains the higher scientific ceiling'],
+    bestFor: ['Everyday production agents', 'Professional documents and analysis', 'Computer-use automation', 'Cost-sensitive complex reasoning'],
+    benchmark: { label: 'AA Intelligence Index v5.0.1', score: '57' },
+    website: 'https://developers.openai.com/api/docs/models/gpt-6.2-sol',
     hot: true,
   },
   {
@@ -219,6 +219,27 @@ export const MODELS: AIModel[] = [
   },
 
   // ── Google ──────────────────────────────────────────────
+  {
+    id: 'gemini-4-neon',
+    name: 'Gemini 4 Neon',
+    provider: 'Google DeepMind',
+    providerColor: '#2f6bd8',
+    category: ['language', 'reasoning', 'coding', 'multimodal'],
+    openWeight: false,
+    released: '2026-11',
+    context: 1000000,
+    contextLabel: '1M',
+    pricing: { input: 3, output: 15 },
+    tagline: 'Google\'s fastest frontier-class route for complex production work',
+    description:
+      'Google\'s November model sits between Hydrogen and Carbon with text, image, video, audio, and PDF input, four effort levels, and $3/$15 pricing. Independent Artificial Analysis testing scores xhigh at 61, one point above Carbon, while measuring about 40% less task time and 17% lower cost than Carbon at standard pricing. Neon used more output tokens, so its advantage comes from lower rates and faster generation rather than token efficiency.',
+    strengths: ['AA Intelligence Index v5 score of 61', 'AA Coding Agent Index score of 59', 'About 110 output tokens per second in independent testing', '1M multimodal context'],
+    weaknesses: ['Xhigh averaged $6.44 per AA task', 'Used about 15% more output tokens than Carbon', 'Preliminary Agent Arena standing', 'Closed model on paid Google tiers'],
+    bestFor: ['Complex production coding', 'Professional spreadsheet and document work', 'Scientific workflows', 'High-frequency multimodal agents'],
+    benchmark: { label: 'AA Intelligence Index v5.0.1', score: '61 (#3)' },
+    website: 'https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/',
+    hot: true,
+  },
   {
     id: 'gemini-4-carbon',
     name: 'Gemini 4 Carbon',
