@@ -424,7 +424,7 @@ export const MODELS: AIModel[] = [
     license: 'Kimi K3 License',
     tagline: 'The downloadable K3 baseline, now superseded on the API',
     description:
-      'Moonshot\'s 2.8-trillion-parameter K3 remains downloadable with 104B active parameters, native vision, and a 1M context window. K3.1 Pro now provides much stronger agent performance and a cheaper API, but its weights are still pending. K3 therefore remains the self-hostable option under the custom Kimi K3 License rather than the performance leader.',
+      'Moonshot\'s 2.8-trillion-parameter K3 remains downloadable with 104B active parameters, native vision, and a 1M context window. K3.1 Pro now provides much stronger agent performance, a cheaper API, and its own downloadable weights at the same scale. K3 therefore remains mainly a baseline for existing self-hosted deployments under the custom Kimi K3 License rather than the performance leader.',
     strengths: ['Downloadable 2.8T MoE weights', '1M context with native vision', 'Strong long-horizon coding', 'Available now for self-hosting'],
     weaknesses: ['K3.1 Pro is materially stronger and cheaper by API', 'Custom license rather than MIT', 'Enormous self-hosting footprint', 'Verbose at maximum reasoning'],
     bestFor: ['Frontier agentic coding', 'Long-horizon engineering sessions', 'Repo-scale migrations', 'Large-scale self-hosted inference'],
