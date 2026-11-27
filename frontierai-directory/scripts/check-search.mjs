@@ -3,7 +3,7 @@ import { MODELS, CATEGORY_LABELS } from '../src/data/models.ts';
 import { matchesModel } from '../src/lib/model-search.ts';
 
 const opus = MODELS.find(m => m.id === 'claude-opus-5-5');
-const astra = MODELS.find(m => m.id === 'gpt-6-astra');
+const astra = MODELS.find(m => m.id === 'gpt-6-2-astra');
 assert.ok(opus && astra);
 assert.ok(matchesModel(opus, 'claude'));
 assert.ok(matchesModel(opus, '  CLAUDE   Opus  '));

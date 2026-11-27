@@ -33,7 +33,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   audio: 'Audio & Speech',
 };
 
-export const LAST_UPDATED = '2026-11-20';
+export const LAST_UPDATED = '2026-11-27';
 
 export const MODELS: AIModel[] = [
   // ── Anthropic ───────────────────────────────────────────
@@ -232,11 +232,11 @@ export const MODELS: AIModel[] = [
     pricing: { input: 3, output: 15 },
     tagline: 'Google\'s fastest frontier-class route for complex production work',
     description:
-      'Google\'s November model sits between Hydrogen and Carbon with text, image, video, audio, and PDF input, four effort levels, and $3/$15 pricing. Independent Artificial Analysis testing scores xhigh at 61, one point above Carbon, while measuring about 40% less task time and 17% lower cost than Carbon at standard pricing. Neon used more output tokens, so its advantage comes from lower rates and faster generation rather than token efficiency.',
-    strengths: ['AA Intelligence Index v5 score of 61', 'AA Coding Agent Index score of 59', 'About 110 output tokens per second in independent testing', '1M multimodal context'],
+      'Google\'s November model sits between Hydrogen and Carbon with text, image, video, audio, and PDF input, four effort levels, and $3/$15 pricing. Independent Artificial Analysis testing scores xhigh at 62 on Intelligence Index v5.0.2, level with GPT-6.2 Astra and two points above Carbon, while measuring about 40% less task time and 17% lower cost than Carbon at standard pricing. Neon used more output tokens, so its advantage comes from lower rates and faster generation rather than token efficiency.',
+    strengths: ['AA Intelligence Index v5.0.2 score of 62, tied #2', 'AA Coding Agent Index score of 59', 'About 110 output tokens per second in independent testing', '1M multimodal context'],
     weaknesses: ['Xhigh averaged $6.44 per AA task', 'Used about 15% more output tokens than Carbon', 'Preliminary Agent Arena standing', 'Closed model on paid Google tiers'],
     bestFor: ['Complex production coding', 'Professional spreadsheet and document work', 'Scientific workflows', 'High-frequency multimodal agents'],
-    benchmark: { label: 'AA Intelligence Index v5.0.1', score: '61 (#3)' },
+    benchmark: { label: 'AA Intelligence Index v5.0.2', score: '62 (tied #2)' },
     website: 'https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/',
     hot: true,
   },
@@ -401,11 +401,11 @@ export const MODELS: AIModel[] = [
     license: 'Kimi K3.1 Pro License',
     tagline: 'The new open-weight agent leader, with an enormous serving footprint',
     description:
-      'Moonshot published the 2.8T-parameter MXFP4 checkpoint on November 4 under its custom Kimi K3.1 Pro License. Independent Artificial Analysis testing scores it 46 on Intelligence Index v5, the highest current open-weight result, and 67% on Terminal-Bench 4.0. Its $2/$10 API rate is one third below K3, but self-hosting 104B active parameters remains an infrastructure-scale undertaking.',
+      'Moonshot published the 2.8T-parameter MXFP4 checkpoint on November 4 under its custom Kimi K3.1 Pro License. Independent Artificial Analysis testing scores it 47 on Intelligence Index v5.0.2, the highest current open-weight result, and 67% on Terminal-Bench 4.0. Its $2/$10 API rate is one third below K3, but self-hosting 104B active parameters remains an infrastructure-scale undertaking.',
     strengths: ['#1 open-weight AA Intelligence Index v5', '67% on independent Terminal-Bench 4.0', 'Downloadable MXFP4 weights', '1M text-and-image context'],
     weaknesses: ['Custom license restricts some large commercial services', 'Enormous 2.8T/104B-active serving footprint', 'Thinking cannot be disabled', 'Official web search is not recommended for production yet'],
     bestFor: ['Long-horizon coding agents', 'Professional knowledge work', '3D and CAD workflows', 'Financial research with verification'],
-    benchmark: { label: 'AA Intelligence Index v5', score: '46 (#1 open)' },
+    benchmark: { label: 'AA Intelligence Index v5.0.2', score: '47 (#1 open)' },
     website: 'https://huggingface.co/moonshotai/Kimi-K3.1-Pro',
     hot: true,
   },
@@ -515,11 +515,11 @@ export const MODELS: AIModel[] = [
     license: 'GLM-5.3 License',
     tagline: 'Open-weight frontier coding without a price increase',
     description:
-      'Z.ai\'s post-trained successor to GLM-5.2 keeps the same 744B/40B-active base, 1M context, and $1.40/$4.40 API rate while materially improving coding and long-horizon work. Independent Artificial Analysis testing scores its max-effort configuration at 60; its large output volume can reduce the apparent token-price advantage.',
-    strengths: ['AA Intelligence Index 60', '1M context', 'Open weights available', 'Strong long-horizon coding'],
-    weaknesses: ['Very verbose in independent testing', 'Text-only', 'Vendor coding gains vary by harness', 'Custom license needs review'],
+      'Z.ai\'s post-trained successor to GLM-5.2 keeps the same 744B/40B-active base, 1M context, and $1.40/$4.40 API rate while materially improving coding and long-horizon work. Independent Artificial Analysis testing scores it 32 on the current Intelligence Index v5.0.2; its large output volume can reduce the apparent token-price advantage. Z.ai announced Loop Transformer successor GLM-5.4 on November 23 in its Coding Plan, ZCode, and chat apps, with API access and weights not yet released.',
+    strengths: ['AA Intelligence Index v5.0.2 score of 32', '1M context', 'Open weights available', 'Strong long-horizon coding'],
+    weaknesses: ['Very verbose in independent testing', 'Text-only', 'GLM-5.4 successor announced; API and weights pending', 'Custom license needs review'],
     bestFor: ['Open-weight frontier coding', 'Long-horizon agents', 'Tool orchestration', 'Self-hosted enterprise inference'],
-    benchmark: { label: 'AA Intelligence Index', score: '60' },
+    benchmark: { label: 'AA Intelligence Index v5.0.2', score: '32' },
     website: 'https://z.ai/blog/glm-5.3',
     hot: true,
   },
@@ -753,13 +753,13 @@ export const MODELS: AIModel[] = [
     pricing: { input: 0.435, output: 0.87 },
     params: '1.02T MoE / 42B active',
     license: 'MIT',
-    tagline: 'The new open-weight intelligence leader',
+    tagline: 'A low-cost open-weight omnimodal flagship',
     description:
-      'Xiaomi\'s open-weight omnimodal flagship combines a 1.02T-parameter MoE with 42B active parameters, 1M context, and text, image, video, and audio input. Independent Artificial Analysis testing ranks it first among open-weight models at 46 on Intelligence Index v4.3.2 and $0.13 per evaluated task. Xiaomi\'s own benchmark table is stronger than its predecessor but remains vendor-reported.',
-    strengths: ['#1 open-weight AA Intelligence Index', '1M omnimodal context', 'MIT-licensed weights', '$0.435/$0.87 API pricing'],
+      'Xiaomi\'s open-weight omnimodal flagship combines a 1.02T-parameter MoE with 42B active parameters, 1M context, and text, image, video, and audio input. It led open-weight models on Artificial Analysis Intelligence Index v4.3.2; on the current v5.0.2 index it scores 30 at about $0.26 per evaluated task, well behind Kimi K3.1 Pro\'s 47. Xiaomi\'s own benchmark table remains vendor-reported.',
+    strengths: ['Very low AA cost per task', '1M omnimodal context', 'MIT-licensed weights', '$0.435/$0.87 API pricing'],
     weaknesses: ['Very large self-hosting footprint', 'Some serving stacks still use V2.5-specific images', 'Verbose in independent testing', 'Vendor benchmark table needs broader replication'],
     bestFor: ['Open-weight production agents', 'Multimodal automation', 'Long-context coding', 'Private enterprise inference'],
-    benchmark: { label: 'AA Intelligence Index v4.3.2', score: '46 (#1 open)' },
+    benchmark: { label: 'AA Intelligence Index v5.0.2', score: '30' },
     website: 'https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL',
     hot: true,
   },
